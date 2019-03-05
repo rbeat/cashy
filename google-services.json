@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "741037501837",
+    "firebase_url": "https://cashy-4f9f8.firebaseio.com",
+    "project_id": "cashy-4f9f8",
+    "storage_bucket": "cashy-4f9f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741037501837:android:7ef60c2f851fdfdc",
+        "android_client_info": {
+          "package_name": "gq.rbeat.cashy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741037501837-1fqjenn33mv4tu40fl7oro22f5hcfik7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvlLdk9MKlgA6TAcUl6mFba8i9_95nfRo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
