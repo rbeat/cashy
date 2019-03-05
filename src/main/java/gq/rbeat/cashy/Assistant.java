@@ -11,18 +11,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.Locale;
 
 public class Assistant extends AppCompatActivity {
-
+    private DatabaseReference mDatabase;
     TextView textExample;
     ImageView imgView;
-    Button talk, spend, balance;
+    Button add, spend, balance;
     TextToSpeech tts;
+    DatabaseReference ref
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
+        Intent intent = getIntent();
+       String email =  intent.getStringExtra("email");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(email);
 
 
 
@@ -37,12 +46,25 @@ public class Assistant extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assistant2);
-        talk = findViewById(R.id.talk);
+        add = findViewById(R.id.add);
         textExample = findViewById(R.id.textExample);
         imgView = findViewById(R.id.imgView);
         spend = findViewById(R.id.spendBt);
         balance = findViewById(R.id.balanceBt);
-        talk.setOnClickListener(new View.OnClickListener() {
+        Query ref;
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // ...
+            }
+        });
+        textExample.setText("Welcome, ");
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String test = "Hello";

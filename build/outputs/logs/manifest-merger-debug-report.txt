@@ -1,9 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
+MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:15:1-36:12
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.firebase:firebase-core:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/6c5de817438b01a26a9c739a98939f3b/AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:design:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f3ce45f66f1b9080f1dc474eca2002a4/AndroidManifest.xml:17:1-24:12
@@ -20,9 +21,10 @@ MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/rodiongrin
 MERGED from [com.google.android.gms:play-services-stats:15.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-stats-15.0.1.aar/ec02c9d93fe437640018d51e4b2ff7a3/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-16.0.0.aar/1e39f7429d50ae02507c750193ca1ce9/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-15.0.1.aar/a3e8f6d538f76067f03b10514c7d14b3/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:2:1-19:12
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/68467b802c89c5bf373eea57cdbd0d42/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.1.0.aar/d6d2760f86107794f22088e43a9a38c1/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.firebase:firebase-database-collection:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/a9a1b55c7a57a9a32d447d65be5cf60d/AndroidManifest.xml:2:1-7:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/510b9e8008a4b8d7591ec5f2fc3a1755/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/bf2ce9279f874d1096af4426b26c5320/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/fb7a5e372952457c167ff859c41d1353/AndroidManifest.xml:17:1-22:12
@@ -54,25 +56,27 @@ MERGED from [com.android.support:print:28.0.0] /Users/rodiongrinberg/.gradle/cac
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/ea14f9c41ca6eeb4b6a734e05eb83892/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/6c987b28e6883005f50a914174562c75/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.0.aar/fcdfe8a580cd603f2e7067c6904a69a4/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:3:5-29
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-25:12
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-27:12
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-analytics:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/7c7913050e98f39493197bc8fd667d9a/AndroidManifest.xml:23:5-67
@@ -84,7 +88,9 @@ MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gra
 	android:name
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:7:5-23:19
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:7:5-25:19
+MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:28:5-34:19
+MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:28:5-34:19
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-core:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/6c5de817438b01a26a9c739a98939f3b/AndroidManifest.xml:7:5-20
@@ -113,8 +119,8 @@ MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] /Users/r
 MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-16.0.0.aar/1e39f7429d50ae02507c750193ca1ce9/AndroidManifest.xml:22:5-23:19
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-15.0.1.aar/a3e8f6d538f76067f03b10514c7d14b3/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-15.0.1.aar/a3e8f6d538f76067f03b10514c7d14b3/AndroidManifest.xml:22:5-20
-MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:9:5-15:19
-MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:9:5-15:19
+MERGED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:11:5-17:19
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/68467b802c89c5bf373eea57cdbd0d42/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/68467b802c89c5bf373eea57cdbd0d42/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.1.0.aar/d6d2760f86107794f22088e43a9a38c1/AndroidManifest.xml:22:5-26:19
@@ -132,39 +138,45 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /User
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9ad5b0659e10181be5c094aa21ee613a/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:10:9-43
 	android:allowBackup
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:13:9-40
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:14:9-40
 activity#gq.rbeat.cashy.MainActivity
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:15:9-21:20
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:16:9-22:20
 	android:name
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:15:19-47
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:16:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:16:13-20:29
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:17:17-69
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:17:25-66
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:20:27-74
 activity#gq.rbeat.cashy.Assistant
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:22:9-56
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:23:9-47
 	android:name
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:22:19-44
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:23:19-44
+activity#gq.rbeat.cashy.Setup
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:24:9-52
+	android:name
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:24:19-40
 uses-sdk
 INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
+MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-core:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/6c5de817438b01a26a9c739a98939f3b/AndroidManifest.xml:5:5-44
@@ -197,12 +209,14 @@ MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] /Users/r
 MERGED from [com.google.firebase:firebase-measurement-connector:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-16.0.0.aar/1e39f7429d50ae02507c750193ca1ce9/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-15.0.1.aar/a3e8f6d538f76067f03b10514c7d14b3/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-15.0.1.aar/a3e8f6d538f76067f03b10514c7d14b3/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/68467b802c89c5bf373eea57cdbd0d42/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/68467b802c89c5bf373eea57cdbd0d42/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.1.0.aar/d6d2760f86107794f22088e43a9a38c1/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-basement:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.1.0.aar/d6d2760f86107794f22088e43a9a38c1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/a9a1b55c7a57a9a32d447d65be5cf60d/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/a9a1b55c7a57a9a32d447d65be5cf60d/AndroidManifest.xml:5:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/510b9e8008a4b8d7591ec5f2fc3a1755/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/510b9e8008a4b8d7591ec5f2fc3a1755/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/bf2ce9279f874d1096af4426b26c5320/AndroidManifest.xml:20:5-44
@@ -277,6 +291,36 @@ INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/Android
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-analytics:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/7c7913050e98f39493197bc8fd667d9a/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/7c7913050e98f39493197bc8fd667d9a/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-16.1.1.aar/5342643af6729e6e725a4bbf553a8687/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-16.1.1.aar/5342643af6729e6e725a4bbf553a8687/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/7de8b7c59d116ed7f4cab739944ca6ef/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/7de8b7c59d116ed7f4cab739944ca6ef/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:25:22-76
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:29:9-33:19
+MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:27:9-31:19
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:27:9-31:19
+MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/7de8b7c59d116ed7f4cab739944ca6ef/AndroidManifest.xml:35:9-39:19
+MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/7de8b7c59d116ed7f4cab739944ca6ef/AndroidManifest.xml:35:9-39:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:29:18-89
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:31:17-109
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents
@@ -293,32 +337,12 @@ ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gra
 		ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:31:13-47
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:25:13-85
-service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:33:9-39:19
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:27:9-31:19
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:27:9-31:19
-MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/7de8b7c59d116ed7f4cab739944ca6ef/AndroidManifest.xml:35:9-39:19
-MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/7de8b7c59d116ed7f4cab739944ca6ef/AndroidManifest.xml:35:9-39:19
-	android:exported
-		ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:35:13-37
-	android:name
-		ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:34:13-84
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
 ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:36:13-38:85
 	android:value
 		ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:38:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:37:17-109
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/7c7913050e98f39493197bc8fd667d9a/AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/7c7913050e98f39493197bc8fd667d9a/AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-16.1.1.aar/5342643af6729e6e725a4bbf553a8687/AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-16.1.1.aar/5342643af6729e6e725a4bbf553a8687/AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/7de8b7c59d116ed7f4cab739944ca6ef/AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/7de8b7c59d116ed7f4cab739944ca6ef/AndroidManifest.xml:22:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:23:22-76
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/e44596ce1dcec7bf5532779eec4ef4e0/AndroidManifest.xml:24:5-68
 MERGED from [com.google.firebase:firebase-analytics:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/7c7913050e98f39493197bc8fd667d9a/AndroidManifest.xml:25:5-68
@@ -462,15 +486,15 @@ ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/rodiongrinb
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/857e53fdd913ebe68bdca69781e26d49/AndroidManifest.xml:24:13-79
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:10:9-14:39
+ADDED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:12:9-16:39
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:12:13-72
+		ADDED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:14:13-72
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:13:13-37
+		ADDED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:15:13-37
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:14:13-36
+		ADDED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:16:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-common:16.0.3] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/79f852c49d7b1acdedb6945367742da9/AndroidManifest.xml:11:13-77
+		ADDED from [com.google.firebase:firebase-common:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-common-16.1.0.aar/b053074ff02d07d900a684ddc7d22c21/AndroidManifest.xml:13:13-77
 meta-data#com.google.android.gms.version
 ADDED from [com.google.android.gms:play-services-basement:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.1.0.aar/d6d2760f86107794f22088e43a9a38c1/AndroidManifest.xml:23:9-25:69
 	android:value

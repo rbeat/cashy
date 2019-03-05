@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void registerUser(){
-        String email_user = email.getText().toString();
+        final String email_user = email.getText().toString();
         String password_user = password.getText().toString();
 
         if(TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password_user)){
@@ -57,6 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "Registered successfully.", Toast.LENGTH_SHORT).show();
                     signUser();
+                    Intent intent = new Intent(MainActivity.this, Setup.class);
+                    intent.putExtra("email", email_user);
+                    startActivity(intent);
+
                 }
                 else
                 {
@@ -67,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void signUser(){
-        String email_user = email.getText().toString();
+        final String email_user = email.getText().toString();
         String password_user = password.getText().toString();
 
         if(TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password_user)){
@@ -89,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "Signed in successfully.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Assistant.class);
+                    intent.putExtra("email", email_user);
+
                     startActivity(intent);
 
                 }
