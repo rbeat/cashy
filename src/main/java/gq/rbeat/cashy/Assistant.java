@@ -21,17 +21,19 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Locale;
 
 public class Assistant extends AppCompatActivity {
-    private DatabaseReference mDatabase;
+
     TextView textExample;
     ImageView imgView;
     Button add, spend, balance;
     TextToSpeech tts;
-    DatabaseReference ref
+    DatabaseReference mDatabase;
+    String name,email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
-       String email =  intent.getStringExtra("email");
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(email);
+        email =  intent.getStringExtra("email");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
 
@@ -51,19 +53,21 @@ public class Assistant extends AppCompatActivity {
         imgView = findViewById(R.id.imgView);
         spend = findViewById(R.id.spendBt);
         balance = findViewById(R.id.balanceBt);
-        Query ref;
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // ...
+                User current = dataSnapshot.child("Users").child(email).getValue(User.class);
+                name = current.getName();
+                textExample.setText("Welcome, " + name + "!");
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // ...
+                Toast.makeText(Assistant.this, "Error while fetching data", Toast.LENGTH_SHORT).show();
             }
         });
-        textExample.setText("Welcome, ");
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

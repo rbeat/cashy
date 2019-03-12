@@ -4,6 +4,11 @@ public class User {
     private String name;
     private String email;
 
+    public User (){
+        this.name = "John Appleseed";
+        this.email = "test@john.as";
+    }
+
     public User(String name, String email){
         this.name = name;
         this.email = email;

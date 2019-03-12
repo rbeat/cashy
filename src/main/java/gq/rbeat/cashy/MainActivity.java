@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.security.MessageDigest;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     EditText email, password;
@@ -93,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "Signed in successfully.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Assistant.class);
-                    intent.putExtra("email", email_user);
+                    intent.putExtra("email", md5(email_user));
 
                     startActivity(intent);
 
@@ -114,6 +116,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(v==regBt){
             registerUser();
+        }
+    }
+    public static final String md5(final String toEncrypt) {
+        try {
+            final MessageDigest digest = MessageDigest.getInstance("md5");
+            digest.update(toEncrypt.getBytes());
+            final byte[] bytes = digest.digest();
+            final StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < bytes.length; i++) {
+                sb.append(String.format("%02X", bytes[i]));
+            }
+            return sb.toString().toLowerCase();
+        } catch (Exception exc) {
+            return "";
         }
     }
 }
