@@ -15,7 +15,7 @@ import java.security.MessageDigest;
 public class Setup extends AppCompatActivity implements View.OnClickListener {
 
     Button ok_name;
-    EditText name;
+    EditText name, balance, credit;
     String email;
     private DatabaseReference mDatabase;
 
@@ -28,23 +28,27 @@ public class Setup extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_setup);
         ok_name = findViewById(R.id.ok_name);
         name = findViewById(R.id.name);
+        balance = findViewById(R.id.balance);
+        credit = findViewById(R.id.credit);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         ok_name.setOnClickListener(this);
 
     }
 
-    public void createUser(String name) {
+    public void createUser(String name, double balance, double creditBalance) {
         User user = new User(name, email);
+        user.setPersonalBalance(balance);
+        user.setCreditBalance(creditBalance);
         mDatabase.child("Users").child(md5(email)).setValue(user);
         Intent intent = new Intent(Setup.this, Assistant.class);
-        intent.putExtra("email", md5(email));
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
     @Override
     public void onClick(View v) {
         if (v == ok_name) {
-            createUser(name.getText().toString());
+            createUser(name.getText().toString(), Double.parseDouble(balance.getText().toString()), Double.parseDouble(credit.getText().toString()));
         }
     }
 

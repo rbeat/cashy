@@ -1106,6 +1106,7 @@ id all
 id always
 id async
 id auto
+id balance
 id balanceBt
 id barrier
 id beginning
@@ -1126,6 +1127,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id credit
 id custom
 id customPanel
 id dark

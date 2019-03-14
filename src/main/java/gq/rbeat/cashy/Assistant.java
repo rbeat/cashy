@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.security.MessageDigest;
 import java.util.Locale;
 
 public class Assistant extends AppCompatActivity {
@@ -27,20 +28,19 @@ public class Assistant extends AppCompatActivity {
     Button add, spend, balance;
     TextToSpeech tts;
     DatabaseReference mDatabase;
-    String name,email;
+    String name, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
-        email =  intent.getStringExtra("email");
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-
+        email = intent.getStringExtra("email");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS) {
+                if (status == TextToSpeech.SUCCESS) {
                     tts.setLanguage(new Locale("en_US"));
                 }
             }
@@ -57,9 +57,11 @@ public class Assistant extends AppCompatActivity {
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User current = dataSnapshot.child("Users").child(email).getValue(User.class);
+                User current = dataSnapshot.child(md5(email)).getValue(User.class);
                 name = current.getName();
-                textExample.setText("Welcome, " + name + "!");
+                String welcomeScreen = "Welcome, " + name + "!";
+                textExample.setText(welcomeScreen);
+                tts.speak(welcomeScreen + "What you gonna do today?", TextToSpeech.QUEUE_FLUSH, null);
             }
 
             @Override
@@ -96,8 +98,8 @@ public class Assistant extends AppCompatActivity {
         });
     }
 
-    public void onPause(){
-        if(tts!=null){
+    public void onPause() {
+        if (tts != null) {
             tts.stop();
             tts.shutdown();
         }
@@ -105,12 +107,18 @@ public class Assistant extends AppCompatActivity {
     }
 
 
-    public boolean canSpend (double balanceWithOwes, double toSpend){
-        if (balanceWithOwes<toSpend){
-            return false;
-        }
-        else{
-            return true;
+    public static final String md5(final String toEncrypt) {
+        try {
+            final MessageDigest digest = MessageDigest.getInstance("md5");
+            digest.update(toEncrypt.getBytes());
+            final byte[] bytes = digest.digest();
+            final StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < bytes.length; i++) {
+                sb.append(String.format("%02X", bytes[i]));
+            }
+            return sb.toString().toLowerCase();
+        } catch (Exception exc) {
+            return "";
         }
     }
 }

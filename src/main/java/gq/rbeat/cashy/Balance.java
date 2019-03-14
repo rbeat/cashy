@@ -30,12 +30,16 @@ public class Balance {
         return creditBalance;
     }
 
-    public double getavailable() {
+    public double getAvailable() {
         return available;
     }
 
     public void setPersonalBalance(double balance) {
         this.personalBalance = balance;
+    }
+
+    public void setCreditBalance(double balance) {
+        this.creditBalance = balance;
     }
 
     public void recalculateAvailable() {

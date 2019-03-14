@@ -18,11 +18,12 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.security.MessageDigest;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText email, password;
     Button signInBt, regBt;
     FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +37,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         regBt.setOnClickListener(this);
     }
 
-    public void registerUser(){
+    public void registerUser() {
         final String email_user = email.getText().toString();
         String password_user = password.getText().toString();
 
-        if(TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password_user)){
+        if (TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password_user)) {
             Toast.makeText(this, "Please, check whether you entered all of the fields.", Toast.LENGTH_LONG).show();
             return;
         }
@@ -49,34 +50,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Toast.makeText(MainActivity.this, "Registering...", Toast.LENGTH_SHORT).show();
 
-        firebaseAuth.createUserWithEmailAndPassword(email_user,password_user).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.createUserWithEmailAndPassword(email_user, password_user).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 email.setEnabled(true);
                 password.setEnabled(true);
 
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(MainActivity.this, "Registered successfully.", Toast.LENGTH_SHORT).show();
                     signUser();
                     Intent intent = new Intent(MainActivity.this, Setup.class);
                     intent.putExtra("email", email_user);
                     startActivity(intent);
 
-                }
-                else
-                {
+                } else {
                     Toast.makeText(MainActivity.this, "Fail. Try again later.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    public void signUser(){
+    public void signUser() {
         final String email_user = email.getText().toString();
         String password_user = password.getText().toString();
 
-        if(TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password_user)){
+        if (TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password_user)) {
             Toast.makeText(this, "Please, check whether you entered all of the fields.", Toast.LENGTH_LONG).show();
             return;
         }
@@ -85,23 +84,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Toast.makeText(MainActivity.this, "Signing in...", Toast.LENGTH_SHORT).show();
 
-        firebaseAuth.signInWithEmailAndPassword(email_user,password_user).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.signInWithEmailAndPassword(email_user, password_user).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 email.setEnabled(true);
                 password.setEnabled(true);
 
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Toast.makeText(MainActivity.this, "Signed in successfully.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Assistant.class);
-                    intent.putExtra("email", md5(email_user));
+                    intent.putExtra("email", email_user);
 
                     startActivity(intent);
 
-                }
-                else
-                {
+                } else {
                     Toast.makeText(MainActivity.this, "Failed. Try again later.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -110,14 +107,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(v == signInBt){
+        if (v == signInBt) {
             signUser();
         }
 
-        if(v==regBt){
+        if (v == regBt) {
             registerUser();
         }
     }
+
     public static final String md5(final String toEncrypt) {
         try {
             final MessageDigest digest = MessageDigest.getInstance("md5");

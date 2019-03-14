@@ -34,7 +34,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         android:theme="@style/Theme.AppCompat.NoActionBar"
-        <activity android:name="gq.rbeat.cashy.MainActivity" >
+        <activity
+            android:name="gq.rbeat.cashy.MainActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

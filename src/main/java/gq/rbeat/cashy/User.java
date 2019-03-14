@@ -17,6 +17,10 @@ public class User {
     public User(String name, String email) {
         this.name = name;
         this.email = email;
+        this.balance = new Balance();
+        this.toPay = new ToPay();
+        this.payment = new Payment();
+
     }
 
     public String getName() {
@@ -50,6 +54,36 @@ public class User {
 
     public void removeLast() {
         payment.removeLast();
+    }
+
+    public double getPersonalBalance() {
+        return this.balance.getPersonalBalance();
+    }
+
+    public double getCreditBalance() {
+        return this.balance.getCreditBalance();
+    }
+
+    public double getAvailable() {
+        return this.balance.getAvailable();
+    }
+
+    public void setPersonalBalance(double balance) {
+        this.balance.setPersonalBalance(balance);
+        this.recalculateAvailable();
+    }
+
+    public void setCreditBalance(double balance) {
+        this.balance.setCreditBalance(balance);
+        this.recalculateAvailable();
+    }
+
+    public void recalculateAvailable() {
+        this.balance.recalculateAvailable();
+    }
+
+    public void spend(double toSpend) {
+        this.balance.spend(toSpend);
     }
 
 }
