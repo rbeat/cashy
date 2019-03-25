@@ -1345,6 +1345,7 @@ layout abc_tooltip
 layout activity_assistant2
 layout activity_main
 layout activity_setup
+layout activity_spend
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

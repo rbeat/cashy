@@ -308,6 +308,10 @@
         "source": "/Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f3ce45f66f1b9080f1dc474eca2002a4/res/color/mtrl_btn_stroke_color_selector.xml"
     },
     {
+        "merged": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/build/intermediates/res/merged/debug/layout_activity_spend.xml.flat",
+        "source": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/res/layout/activity_spend.xml"
+    },
+    {
         "merged": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "/Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9ad5b0659e10181be5c094aa21ee613a/res/drawable-hdpi-v4/notification_bg_normal.9.png"
     },

@@ -12,6 +12,9 @@ public class User {
     public User() {
         this.name = "John Appleseed";
         this.email = "test@john.as";
+        this.balance = new Balance();
+        this.toPay = new ToPay();
+        this.payment = new Payment();
     }
 
     public User(String name, String email) {

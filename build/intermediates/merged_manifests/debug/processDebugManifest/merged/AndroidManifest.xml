@@ -45,6 +45,7 @@
         </activity>
         <activity android:name="gq.rbeat.cashy.Assistant" />
         <activity android:name="gq.rbeat.cashy.Setup" />
+        <activity android:name="gq.rbeat.cashy.Spend" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
