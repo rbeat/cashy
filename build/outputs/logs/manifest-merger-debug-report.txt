@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
 MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:15:1-36:12
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.firebase:firebase-core:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/6c5de817438b01a26a9c739a98939f3b/AndroidManifest.xml:2:1-9:12
@@ -56,20 +56,20 @@ MERGED from [com.android.support:print:28.0.0] /Users/rodiongrinberg/.gradle/cac
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/ea14f9c41ca6eeb4b6a734e05eb83892/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/6c987b28e6883005f50a914174562c75/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.0.aar/fcdfe8a580cd603f2e7067c6904a69a4/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:3:5-29
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-30:12
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-41:12
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:11-69
@@ -88,7 +88,7 @@ MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gra
 	android:name
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:7:5-28:19
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:7:5-39:19
 MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:28:5-34:19
 MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:28:5-34:19
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:23:5-40:19
@@ -166,21 +166,35 @@ ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidMan
 	android:name
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:21:27-74
 activity#gq.rbeat.cashy.Assistant
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:24:9-47
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:24:9-26:52
+	android:screenOrientation
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:26:13-49
 	android:name
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:24:19-44
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:25:13-38
 activity#gq.rbeat.cashy.Setup
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:25:9-43
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:27:9-29:52
+	android:screenOrientation
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:29:13-49
 	android:name
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:25:19-40
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:28:13-34
 activity#gq.rbeat.cashy.Spend
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:26:9-43
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:30:9-32:52
+	android:screenOrientation
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:32:13-49
 	android:name
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:26:19-40
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:31:13-34
 activity#gq.rbeat.cashy.BalanceScreen
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:27:9-60
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:33:9-35:52
+	android:screenOrientation
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:35:13-49
 	android:name
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:27:19-48
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:34:13-42
+activity#gq.rbeat.cashy.AddingMoney
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:36:9-38:61
+	android:screenOrientation
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:38:13-49
+	android:name
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:37:13-40
 uses-sdk
 INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml

@@ -43,10 +43,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="gq.rbeat.cashy.Assistant" />
-        <activity android:name="gq.rbeat.cashy.Setup" />
-        <activity android:name="gq.rbeat.cashy.Spend" />
-        <activity android:name="gq.rbeat.cashy.BalanceScreen" />
+        <activity
+            android:name="gq.rbeat.cashy.Assistant"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gq.rbeat.cashy.Setup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gq.rbeat.cashy.Spend"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gq.rbeat.cashy.BalanceScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="gq.rbeat.cashy.AddingMoney"
+            android:screenOrientation="portrait" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

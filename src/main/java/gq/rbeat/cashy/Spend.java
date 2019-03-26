@@ -1,11 +1,15 @@
 package gq.rbeat.cashy;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.inputmethodservice.Keyboard;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -52,7 +56,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spend);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         spendActionBt = findViewById(R.id.spendActionBt);
         confirm = findViewById(R.id.confirm);
         sumItem = findViewById(R.id.sumItem);
@@ -76,7 +80,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
 
     public void spend(Double sum, String text) {
         current.makePayment(text, sum);
-        mDatabase.child("Users").child(email).setValue(current);
+        mDatabase.child(email).setValue(current);
         Intent intent = new Intent(Spend.this, Assistant.class);
         intent.putExtra("email", email);
         startActivity(intent);
@@ -96,7 +100,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
                     tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
                     spend(Double.parseDouble(sumItem.getText().toString()), nameItem.getText().toString());
                 } else {
-
+                    hideKeyboard(this);
                     spendText1.setText("Your out of money, \nbut you do have credit. Wanna proceed?");
                     tts.speak("Your out of money, but you do have credit. Wanna proceed?", TextToSpeech.QUEUE_FLUSH, null);
                     imgView.setImageResource(R.drawable.confused);
@@ -112,6 +116,15 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
                 imgView.setImageResource(R.drawable.angry);
             }
         }
+    }
+
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        View f = activity.getCurrentFocus();
+        if (null != f && null != f.getWindowToken() && EditText.class.isAssignableFrom(f.getClass()))
+            imm.hideSoftInputFromWindow(f.getWindowToken(), 0);
+        else
+            activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
 

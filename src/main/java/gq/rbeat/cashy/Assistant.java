@@ -2,7 +2,6 @@ package gq.rbeat.cashy;
 
 import android.content.Intent;
 import android.speech.tts.TextToSpeech;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,10 +14,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.security.MessageDigest;
 import java.util.Locale;
 
 
@@ -80,8 +77,9 @@ public class Assistant extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String test = "Hello";
-                tts.speak(test, TextToSpeech.QUEUE_FLUSH, null);
+                Intent intent = new Intent(Assistant.this, AddingMoney.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
             }
         });
 

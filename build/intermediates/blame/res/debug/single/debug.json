@@ -1136,6 +1136,10 @@
         "source": "/Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/22c8790a1e12f8347857f5840bc3670b/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
+        "merged": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/build/intermediates/res/merged/debug/layout_activity_adding_money.xml.flat",
+        "source": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/res/layout/activity_adding_money.xml"
+    },
+    {
         "merged": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/build/intermediates/res/merged/debug/anim_design_snackbar_out.xml.flat",
         "source": "/Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f3ce45f66f1b9080f1dc474eca2002a4/res/anim/design_snackbar_out.xml"
     },

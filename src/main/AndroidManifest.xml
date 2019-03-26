@@ -21,10 +21,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Assistant" />
-        <activity android:name=".Setup" />
-        <activity android:name=".Spend" />
-        <activity android:name=".BalanceScreen"></activity>
+        <activity
+            android:name=".Assistant"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Setup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Spend"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BalanceScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddingMoney"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

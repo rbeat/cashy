@@ -1073,6 +1073,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable wallpaper
 id ALT
+id AddActionBt
 id CTRL
 id FUNCTION
 id META
@@ -1099,6 +1100,8 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addText1
+id addText2
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1130,6 +1133,7 @@ id content
 id contentPanel
 id coordinator
 id credit
+id creditAdd
 id custom
 id customPanel
 id dark
@@ -1264,6 +1268,7 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id sumAdd
 id sumItem
 id tabMode
 id tag_transition_group
@@ -1350,6 +1355,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_adding_money
 layout activity_assistant2
 layout activity_balance_screen
 layout activity_main
