@@ -21,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.security.MessageDigest;
 import java.util.Locale;
 
+
 public class Assistant extends AppCompatActivity {
 
     TextView textExample;
@@ -29,6 +30,7 @@ public class Assistant extends AppCompatActivity {
     TextToSpeech tts;
     DatabaseReference mDatabase;
     String name, email;
+    User current;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +59,14 @@ public class Assistant extends AppCompatActivity {
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User current = dataSnapshot.child(md5(email)).getValue(User.class);
+                current = dataSnapshot.child(email).getValue(User.class);
+                current.recalculateAvailable();
+                mDatabase.child(email).setValue(current);
                 name = current.getName();
                 String welcomeScreen = "Welcome, " + name + "!";
+                spend.setVisibility(View.VISIBLE);
+                add.setVisibility(View.VISIBLE);
+                balance.setVisibility(View.VISIBLE);
                 textExample.setText(welcomeScreen);
                 tts.speak(welcomeScreen + "What you gonna do today?", TextToSpeech.QUEUE_FLUSH, null);
             }
@@ -82,18 +89,18 @@ public class Assistant extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String test = "Sorry, but you're empty. You can work harder next time, to buy those snickers.";
-                Toast.makeText(Assistant.this, test, Toast.LENGTH_SHORT).show();
-                tts.speak(test, TextToSpeech.QUEUE_FLUSH, null);
+                Intent intent = new Intent(Assistant.this, Spend.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
             }
         });
 
         balance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String test = "Your balance is zero. You should consider finding a job.";
-                Toast.makeText(Assistant.this, test, Toast.LENGTH_SHORT).show();
-                tts.speak(test, TextToSpeech.QUEUE_FLUSH, null);
+                Intent intent = new Intent(Assistant.this, BalanceScreen.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
             }
         });
     }
@@ -107,18 +114,4 @@ public class Assistant extends AppCompatActivity {
     }
 
 
-    public static final String md5(final String toEncrypt) {
-        try {
-            final MessageDigest digest = MessageDigest.getInstance("md5");
-            digest.update(toEncrypt.getBytes());
-            final byte[] bytes = digest.digest();
-            final StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < bytes.length; i++) {
-                sb.append(String.format("%02X", bytes[i]));
-            }
-            return sb.toString().toLowerCase();
-        } catch (Exception exc) {
-            return "";
-        }
-    }
 }

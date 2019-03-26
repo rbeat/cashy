@@ -1106,6 +1106,7 @@ id all
 id always
 id async
 id auto
+id backBalanceBt
 id balance
 id balanceBt
 id barrier
@@ -1123,6 +1124,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id confirm
 id container
 id content
 id contentPanel
@@ -1189,6 +1191,7 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id name
+id nameItem
 id navigation_header_container
 id never
 id none
@@ -1245,7 +1248,10 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spendActionBt
 id spendBt
+id spendText1
+id spendText2
 id split_action_bar
 id spread
 id spread_inside
@@ -1258,12 +1264,14 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id sumItem
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id text
 id text2
+id textBalance
 id textExample
 id textSpacerNoButtons
 id textSpacerNoTitle
@@ -1343,6 +1351,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_assistant2
+layout activity_balance_screen
 layout activity_main
 layout activity_setup
 layout activity_spend

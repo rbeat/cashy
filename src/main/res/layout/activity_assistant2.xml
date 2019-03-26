@@ -9,7 +9,9 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:background="@drawable/dialog_box"
+
     >
+
 
     <ImageView
 
@@ -62,6 +64,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
+            android:visibility="gone"
             android:text="Add Money" />
 
         <Button
@@ -71,6 +74,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
+            android:visibility="gone"
             android:text=" Current Balance " />
 
         <Button
@@ -79,11 +83,11 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
+            android:visibility="gone"
             android:text=" I want to spend money " />
 
 
     </LinearLayout>
-
 
 
 </android.support.constraint.ConstraintLayout>

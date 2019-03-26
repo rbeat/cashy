@@ -1676,6 +1676,10 @@
         "source": "/Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/22c8790a1e12f8347857f5840bc3670b/res/layout/abc_list_menu_item_icon.xml"
     },
     {
+        "merged": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/build/intermediates/res/merged/debug/layout_activity_balance_screen.xml.flat",
+        "source": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/res/layout/activity_balance_screen.xml"
+    },
+    {
         "merged": "/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "/Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/22c8790a1e12f8347857f5840bc3670b/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
     },

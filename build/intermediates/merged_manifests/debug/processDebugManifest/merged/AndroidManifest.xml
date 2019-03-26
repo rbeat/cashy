@@ -35,7 +35,7 @@
         android:theme="@style/AppTheme" >
         android:theme="@style/Theme.AppCompat.NoActionBar"
         <activity
-            android:name="gq.rbeat.cashy.MainActivity"
+            android:name="gq.rbeat.cashy.Login"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +46,7 @@
         <activity android:name="gq.rbeat.cashy.Assistant" />
         <activity android:name="gq.rbeat.cashy.Setup" />
         <activity android:name="gq.rbeat.cashy.Spend" />
+        <activity android:name="gq.rbeat.cashy.BalanceScreen" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

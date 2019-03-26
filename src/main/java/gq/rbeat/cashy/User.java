@@ -51,8 +51,8 @@ public class User {
         toPay.removeToPay(name);
     }
 
-    public void makePayment(String name, Double sum, Balance balance) {
-        payment.makePayment(name, sum, balance);
+    public void makePayment(String name, Double sum) {
+        payment.makePayment(name, sum, this.balance);
     }
 
     public void removeLast() {
