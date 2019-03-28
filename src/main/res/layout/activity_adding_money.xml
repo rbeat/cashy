@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Got bigger credit? Change it."
+            android:text="Got bigger credit? \nChange it."
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -81,7 +81,7 @@
             android:id="@+id/creditAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Name of Item. (Example: Sneakers)" />
+            android:hint="Current balance: Getting..." />
 
     </LinearLayout>
 

@@ -82,6 +82,7 @@ public class User {
     }
 
     public void recalculateAvailable() {
+        toPay.calculateSum();
         this.balance.recalculateAvailable();
     }
 

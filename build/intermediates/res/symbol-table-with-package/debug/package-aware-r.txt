@@ -1114,6 +1114,7 @@ id balance
 id balanceBt
 id barrier
 id beginning
+id billsBt
 id blocking
 id bottom
 id buttonPanel
@@ -1195,6 +1196,7 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id name
+id nameBills
 id nameItem
 id navigation_header_container
 id never
@@ -1269,6 +1271,7 @@ id stretch
 id submenuarrow
 id submit_area
 id sumAdd
+id sumBill
 id sumItem
 id tabMode
 id tag_transition_group
@@ -1355,6 +1358,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_bills
 layout activity_adding_money
 layout activity_assistant2
 layout activity_balance_screen

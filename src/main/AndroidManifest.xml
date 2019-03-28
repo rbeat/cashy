@@ -35,7 +35,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".AddingMoney"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AddBills"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

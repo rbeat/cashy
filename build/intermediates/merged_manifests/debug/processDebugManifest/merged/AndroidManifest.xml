@@ -58,6 +58,9 @@
         <activity
             android:name="gq.rbeat.cashy.AddingMoney"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="gq.rbeat.cashy.AddBills"
+            android:screenOrientation="portrait" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

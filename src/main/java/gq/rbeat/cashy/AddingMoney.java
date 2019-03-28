@@ -36,13 +36,13 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
-        creditSum = findViewById(R.id.creditAdd);
+
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
                 cred = current.getCreditBalance() + "";
-
+                init();
             }
 
             @Override
@@ -63,14 +63,11 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
         add = findViewById(R.id.AddActionBt);
         imgView = findViewById(R.id.imgView);
         addSum = findViewById(R.id.sumAdd);
-
+        creditSum = findViewById(R.id.creditAdd);
 
         tts.speak("Got some moneys? Got more credit?", TextToSpeech.QUEUE_FLUSH, null);
         add.setOnClickListener(this);
-        cred = current.getCreditBalance() + "";
-        while (cred != null) {
-            creditSum.setText(cred);
-        }
+
 
     }
 
@@ -85,6 +82,13 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
         Intent intent = new Intent(AddingMoney.this, Assistant.class);
         intent.putExtra("email", email);
         startActivity(intent);
+    }
+
+    public void init() {
+
+
+        creditSum.setHint("Current: " + cred);
+
     }
 
     @Override
