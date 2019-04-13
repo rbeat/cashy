@@ -95,6 +95,15 @@
             android:visibility="gone"
             android:text=" Add bills to pay " />
 
+        <Button
+            android:id="@+id/showBillsBt"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button"
+            android:visibility="gone"
+            android:text=" Show Bills " />
+
 
     </LinearLayout>
 

@@ -4,22 +4,24 @@ public class Balance {
     private double available;
     private double personalBalance;
     private double creditBalance;
-    private double toPay;
+    private double debt;
 
     public Balance() {
         this.personalBalance = 0;
         this.creditBalance = 0;
-        this.available = personalBalance + creditBalance - toPay;
+
+        this.available = personalBalance + creditBalance - debt;
     }
 
     public Balance(double personalBalance, double creditBalance) {
         this.creditBalance = creditBalance;
         this.personalBalance = personalBalance;
-        this.available = personalBalance + creditBalance;
+        this.available = personalBalance + creditBalance - debt;
     }
 
-    public void setToPay(double toPay) {
-        this.toPay = toPay;
+
+    public void setDebt(Double debt) {
+        this.debt = debt;
     }
 
     public double getPersonalBalance() {
@@ -43,7 +45,8 @@ public class Balance {
     }
 
     public void recalculateAvailable() {
-        this.available = personalBalance + creditBalance - toPay;
+
+        this.available = personalBalance + creditBalance - debt;
     }
 
     public void spend(double toSpend) {

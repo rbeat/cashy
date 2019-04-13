@@ -23,7 +23,7 @@ public class Assistant extends AppCompatActivity {
 
     TextView textExample;
     ImageView imgView;
-    Button add, spend, balance, bills;
+    Button add, spend, balance, bills, showBills;
     TextToSpeech tts;
     DatabaseReference mDatabase;
     String name, email;
@@ -53,6 +53,7 @@ public class Assistant extends AppCompatActivity {
         spend = findViewById(R.id.spendBt);
         balance = findViewById(R.id.balanceBt);
         bills = findViewById(R.id.billsBt);
+        showBills = findViewById(R.id.showBillsBt);
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -64,6 +65,7 @@ public class Assistant extends AppCompatActivity {
                 spend.setVisibility(View.VISIBLE);
                 add.setVisibility(View.VISIBLE);
                 balance.setVisibility(View.VISIBLE);
+                showBills.setVisibility(View.VISIBLE);
                 bills.setVisibility(View.VISIBLE);
                 textExample.setText(welcomeScreen);
                 tts.speak(welcomeScreen + "What you gonna do today?", TextToSpeech.QUEUE_FLUSH, null);
@@ -111,7 +113,14 @@ public class Assistant extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        showBills.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Assistant.this, ShowBills.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+        });
     }
 
     public void onPause() {

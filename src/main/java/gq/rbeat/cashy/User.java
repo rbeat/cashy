@@ -44,7 +44,7 @@ public class User {
 
     public void addToPay(String name, Double sum) {
         toPay.addToPay(name, sum);
-        balance.setToPay(toPay.calculateSum());
+        balance.setDebt(toPay.calculateSum());
     }
 
     public void removeToPay(String name) {
@@ -82,8 +82,12 @@ public class User {
     }
 
     public void recalculateAvailable() {
-        toPay.calculateSum();
+        balance.setDebt(toPay.calculateSum());
         this.balance.recalculateAvailable();
+    }
+
+    public ToPay getToPay() {
+        return this.toPay;
     }
 
     public void spend(double toSpend) {

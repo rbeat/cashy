@@ -26,6 +26,14 @@ public class ToPay {
         return sum;
     }
 
+    public List<String> getName() {
+        return this.name;
+    }
+
+    public List<Double> getSum() {
+        return this.sum;
+    }
+
     public void removeToPay(String name) {
         for (int i = 0; i < sum.size(); i++) {
             if (this.name.get(i).equals(name)) {

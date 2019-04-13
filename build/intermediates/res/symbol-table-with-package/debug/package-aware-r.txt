@@ -1014,6 +1014,7 @@ drawable abc_vector_test
 drawable angry
 drawable avd_hide_password
 drawable avd_show_password
+drawable back
 drawable border
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1043,6 +1044,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable dialog_box
+drawable divider
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_launcher_background
@@ -1185,6 +1187,7 @@ id left
 id light
 id line1
 id line3
+id listBills
 id listMode
 id list_item
 id masked
@@ -1244,6 +1247,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id shortcut
+id showBillsBt
 id showCustom
 id showHome
 id showTitle
@@ -1364,6 +1368,7 @@ layout activity_assistant2
 layout activity_balance_screen
 layout activity_main
 layout activity_setup
+layout activity_show_bills
 layout activity_spend
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1396,6 +1401,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout row_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1685,6 +1691,9 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style Divider
+style Divider_Horizontal
+style Divider_Vertical
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

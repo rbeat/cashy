@@ -4,20 +4,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Payment {
-    private   List<String> name;
+    private List<String> name;
     private List<Double> sum;
-    public Payment(){
+
+    public Payment() {
         name = new ArrayList<>();
         sum = new ArrayList<>();
     }
-    public void makePayment(String name, Double sum, Balance balance){
+
+    public void makePayment(String name, Double sum, Balance balance) {
         this.name.add(name);
         this.sum.add(sum);
         balance.spend(sum);
     }
-    public void removeLast(){
-                this.name.remove(this.name.size()-1);
-                this.sum.remove(this.name.size()-1);
+
+    public void removeLast() {
+        this.name.remove(this.name.size() - 1);
+        this.sum.remove(this.name.size() - 1);
+    }
+
+    public List<String> getName() {
+        return this.name;
+    }
+
+    public List<Double> getSum() {
+        return this.sum;
+    }
+
+    public void removePayment(String name) {
+        for (int i = 0; i < sum.size(); i++) {
+            if (this.name.get(i).equals(name)) {
+                this.name.remove(i);
+                this.sum.remove(i);
+            }
         }
     }
+}
 

@@ -95,7 +95,9 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         if (v == add) {
             Double cashToAdd = Double.parseDouble(addSum.getText().toString());
-            Double creditAdd = Double.parseDouble(creditSum.getText().toString());
+            Double creditAdd = current.getCreditBalance();
+            if (creditSum.getText() != null)
+                creditAdd = Double.parseDouble(creditSum.getText().toString());
             addCash(cashToAdd, creditAdd);
         }
     }

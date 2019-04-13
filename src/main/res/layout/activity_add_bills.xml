@@ -60,7 +60,8 @@
             android:id="@+id/sumBill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Sum to pay. (Example: 75.38)" />
+            android:hint="Sum to pay. (Example: 75.38)"
+            android:inputType="numberDecimal" />
 
 
         <TextView
