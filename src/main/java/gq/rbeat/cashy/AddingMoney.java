@@ -32,7 +32,7 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        getSupportActionBar().hide();
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
@@ -65,7 +65,7 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
         addSum = findViewById(R.id.sumAdd);
         creditSum = findViewById(R.id.creditAdd);
 
-        tts.speak("Got some moneys? Got more credit?", TextToSpeech.QUEUE_FLUSH, null);
+
         add.setOnClickListener(this);
 
 
@@ -77,8 +77,8 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
         current.setPersonalBalance(toPut);
         current.setCreditBalance(credit);
         mDatabase.child(email).setValue(current);
-        Toast.makeText(this, "OK, you can spend them. Adding them to DB...", Toast.LENGTH_SHORT).show();
-        tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
+        Toast.makeText(this, "OK, adding them to DB...", Toast.LENGTH_SHORT).show();
+        tts.speak("OK, adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
         Intent intent = new Intent(AddingMoney.this, Assistant.class);
         intent.putExtra("email", email);
         startActivity(intent);
@@ -88,7 +88,7 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
 
 
         creditSum.setHint("Current: " + cred);
-
+        tts.speak("Got some moneys? Got more credit?", TextToSpeech.QUEUE_FLUSH, null);
     }
 
     @Override

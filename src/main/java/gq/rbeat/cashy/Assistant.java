@@ -1,10 +1,14 @@
 package gq.rbeat.cashy;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.speech.tts.TextToSpeech;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,11 +27,12 @@ public class Assistant extends AppCompatActivity {
 
     TextView textExample;
     ImageView imgView;
-    Button add, spend, balance, bills, showBills;
+    Button add, spend, balance, bills, showBills, showSpends, logout;
     TextToSpeech tts;
     DatabaseReference mDatabase;
     String name, email;
     User current;
+    Animation animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,8 @@ public class Assistant extends AppCompatActivity {
         });
 
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
+        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
         setContentView(R.layout.activity_assistant2);
         add = findViewById(R.id.add);
         textExample = findViewById(R.id.textExample);
@@ -53,7 +60,9 @@ public class Assistant extends AppCompatActivity {
         spend = findViewById(R.id.spendBt);
         balance = findViewById(R.id.balanceBt);
         bills = findViewById(R.id.billsBt);
+        logout = findViewById(R.id.logout);
         showBills = findViewById(R.id.showBillsBt);
+        showSpends = findViewById(R.id.showSpendsBt);
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -67,7 +76,9 @@ public class Assistant extends AppCompatActivity {
                 balance.setVisibility(View.VISIBLE);
                 showBills.setVisibility(View.VISIBLE);
                 bills.setVisibility(View.VISIBLE);
+                showSpends.setVisibility(View.VISIBLE);
                 textExample.setText(welcomeScreen);
+                animation.start();
                 tts.speak(welcomeScreen + "What you gonna do today?", TextToSpeech.QUEUE_FLUSH, null);
             }
 
@@ -95,6 +106,25 @@ public class Assistant extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new AlertDialog.Builder(Assistant.this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Logout")
+                        .setMessage("Are you sure you want to logout?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
+            }
+        });
 
         balance.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +147,15 @@ public class Assistant extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Assistant.this, ShowBills.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+        });
+
+        showSpends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Assistant.this, ShowSpends.class);
                 intent.putExtra("email", email);
                 startActivity(intent);
             }

@@ -1,11 +1,18 @@
 package gq.rbeat.cashy;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -22,6 +29,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText email, password;
     Button signInBt, regBt;
     FirebaseAuth firebaseAuth;
+    Animation animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,60 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         signInBt.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
         regBt.setOnClickListener(this);
+        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.about: {
+                new AlertDialog.Builder(Login.this)
+                        .setTitle("About")
+                        .setMessage("Cashy: Your true money bro.\nCreated by Rodion Grinberg\nhttp://rbeat.gq\nadmin@rbeat.gq")
+                        .setCancelable(false)
+                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+
+                        }).show();
+                return true;
+
+            }
+            case R.id.exit: {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
+                builder.setTitle(R.string.app_name);
+                builder.setIcon(R.mipmap.ic_launcher);
+                builder.setMessage("Do you want to exit?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+                return true;
+
+            }
+            default: {
+                return super.onOptionsItemSelected(item);
+
+            }
+        }
     }
 
     public void registerUser() {

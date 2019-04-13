@@ -39,6 +39,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
@@ -46,6 +47,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
+                tts.speak("Tell me, how much you want to spend? Spend on what?", TextToSpeech.QUEUE_FLUSH, null);
             }
 
             @Override
@@ -75,7 +77,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
                 }
             }
         });
-        tts.speak("Tell me, how much you want to spend? Spend on what?", TextToSpeech.QUEUE_FLUSH, null);
+
     }
 
     public void spend(Double sum, String text) {

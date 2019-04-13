@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 public class BalanceScreen extends AppCompatActivity {
 
@@ -29,12 +30,20 @@ public class BalanceScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance_screen);
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         tv = findViewById(R.id.textBalance);
-
+        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    tts.setLanguage(new Locale("en_US"));
+                }
+            }
+        });
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -54,6 +63,7 @@ public class BalanceScreen extends AppCompatActivity {
     }
 
     public void continueBalance() {
+        tts.speak("Here's how broke we are.", TextToSpeech.QUEUE_FLUSH, null);
         current.recalculateAvailable();
         Double balance = current.getPersonalBalance();
 
@@ -61,6 +71,17 @@ public class BalanceScreen extends AppCompatActivity {
 
         Double available = current.getAvailable();
 
+        if (balance <= 10) {
+            if (available <= 10) {
+                imgView.setImageResource(R.drawable.angry);
+                tts.speak("Man, stop spending your money. You are too low on balance.", TextToSpeech.QUEUE_ADD, null);
+            } else {
+                tts.speak("Be careful, you are spending the credit money right now.", TextToSpeech.QUEUE_ADD, null);
+                imgView.setImageResource(R.drawable.confused);
+            }
+        } else {
+            tts.speak("Just kidding. We are OK.", TextToSpeech.QUEUE_ADD, null);
+        }
         tv.setText("Balance: " + new DecimalFormat("##.##").format(balance) + "\nCredit: " + new DecimalFormat("##.##").format(credit) + "\nAvailable: " + new DecimalFormat("##.##").format(available));
 
     }

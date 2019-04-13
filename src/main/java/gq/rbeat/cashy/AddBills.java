@@ -31,7 +31,7 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        getSupportActionBar().hide();
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
@@ -40,7 +40,7 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
-
+                tts.speak("Let's add your bills. One bill, two bill, three...", TextToSpeech.QUEUE_FLUSH, null);
             }
 
             @Override
@@ -62,7 +62,7 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
         sum = findViewById(R.id.sumBill);
         name = findViewById(R.id.nameBills);
 
-        tts.speak("Let's add your bills.", TextToSpeech.QUEUE_FLUSH, null);
+
         add.setOnClickListener(this);
 
 
@@ -76,8 +76,8 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
             String name1 = name.getText().toString();
             current.addToPay(name1, sum1);
             mDatabase.child(email).setValue(current);
-            Toast.makeText(this, "OK, you can spend them. Adding them to DB...", Toast.LENGTH_SHORT).show();
-            tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
+            Toast.makeText(this, "OK. Adding them to DB...", Toast.LENGTH_SHORT).show();
+            tts.speak("OK. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
             Intent intent = new Intent(AddBills.this, Assistant.class);
             intent.putExtra("email", email);
             startActivity(intent);

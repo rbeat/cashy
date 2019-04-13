@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Locale;
+
 public class ShowBills extends AppCompatActivity {
 
     TextView tv;
@@ -34,19 +36,27 @@ public class ShowBills extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_bills);
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         tv = findViewById(R.id.textBalance);
-
+        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    tts.setLanguage(new Locale("en_US"));
+                }
+            }
+        });
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
                 getBills();
-
+                tts.speak("Here's what you should save your money for.", TextToSpeech.QUEUE_FLUSH, null);
             }
 
             @Override

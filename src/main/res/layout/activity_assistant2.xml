@@ -57,18 +57,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <Button
-            android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/round_button"
-            android:visibility="gone"
-            android:text="Add Money" />
-
-        <Button
-
             android:id="@+id/balanceBt"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -78,13 +67,22 @@
             android:text=" Current Balance " />
 
         <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button"
+            android:visibility="gone"
+            android:text=" Add Money " />
+
+        <Button
             android:id="@+id/spendBt"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" I want to spend money " />
+            android:text=" Spend money " />
 
         <Button
             android:id="@+id/billsBt"
@@ -102,7 +100,24 @@
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Show Bills " />
+            android:text=" Show my bills " />
+
+        <Button
+            android:id="@+id/showSpendsBt"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button"
+            android:visibility="gone"
+            android:text=" Show my spends " />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button"
+            android:text=" Logout " />
 
 
     </LinearLayout>

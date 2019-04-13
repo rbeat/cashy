@@ -11,6 +11,7 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
+anim bounce
 anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
@@ -1081,6 +1082,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id about
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1156,6 +1158,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id exit
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1190,6 +1193,7 @@ id line3
 id listBills
 id listMode
 id list_item
+id logout
 id masked
 id media_actions
 id message
@@ -1250,6 +1254,7 @@ id shortcut
 id showBillsBt
 id showCustom
 id showHome
+id showSpendsBt
 id showTitle
 id signInBt
 id smallLabel
@@ -1369,6 +1374,7 @@ layout activity_balance_screen
 layout activity_main
 layout activity_setup
 layout activity_show_bills
+layout activity_show_spends
 layout activity_spend
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1406,8 +1412,10 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw splash
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1498,7 +1506,6 @@ style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
 style AppTheme_AppBarOverlay
-style AppTheme_NoActionBar
 style AppTheme_PopupOverlay
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
