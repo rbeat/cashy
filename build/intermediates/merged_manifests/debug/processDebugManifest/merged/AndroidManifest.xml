@@ -71,6 +71,9 @@
             android:screenOrientation="portrait" />
 
         <service
+            android:name="gq.rbeat.cashy.BackgroundSoundService"
+            android:enabled="true" />
+        <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:exported="false" >
             <meta-data

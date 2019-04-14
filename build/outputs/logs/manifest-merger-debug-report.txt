@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
 MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:15:1-36:12
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.firebase:firebase-core:16.0.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/6c5de817438b01a26a9c739a98939f3b/AndroidManifest.xml:2:1-9:12
@@ -56,20 +56,20 @@ MERGED from [com.android.support:print:28.0.0] /Users/rodiongrinberg/.gradle/cac
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/ea14f9c41ca6eeb4b6a734e05eb83892/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/6c987b28e6883005f50a914174562c75/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.0.aar/fcdfe8a580cd603f2e7067c6904a69a4/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
 	package
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:3:5-29
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
-		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-53:12
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:1-57:12
 		INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:2:11-69
@@ -88,7 +88,7 @@ MERGED from [com.google.firebase:firebase-iid:16.0.0] /Users/rodiongrinberg/.gra
 	android:name
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:7:5-51:19
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:7:5-55:19
 MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:28:5-34:19
 MERGED from [com.google.firebase:firebase-database:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-database-16.1.0.aar/2ac69e60385ea7c33b1bf96d13384008/AndroidManifest.xml:28:5-34:19
 MERGED from [com.google.firebase:firebase-auth:16.1.0] /Users/rodiongrinberg/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.1.0.aar/1b9e865a2eb7a42cf632b38ddbaa9402/AndroidManifest.xml:23:5-40:19
@@ -219,6 +219,12 @@ ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidMan
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:50:13-49
 	android:name
 		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:49:13-39
+service#gq.rbeat.cashy.BackgroundSoundService
+ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:52:9-54:54
+	android:enabled
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:53:13-35
+	android:name
+		ADDED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml:54:13-51
 uses-sdk
 INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/rodiongrinberg/Desktop/Android/Cashy-1/app/src/main/AndroidManifest.xml

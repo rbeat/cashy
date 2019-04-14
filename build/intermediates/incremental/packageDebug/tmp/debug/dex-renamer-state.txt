@@ -1,4 +1,4 @@
-#Sun Apr 14 01:23:38 IDT 2019
+#Sun Apr 14 09:36:58 IDT 2019
 base.0=/Users/rodiongrinberg/Desktop/Android/Cashy-1/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -48,6 +48,10 @@
         <activity
             android:name=".ShowSpends"
             android:screenOrientation="portrait" />
+
+        <service
+            android:enabled="true"
+            android:name=".BackgroundSoundService" />
     </application>
 
 </manifest>

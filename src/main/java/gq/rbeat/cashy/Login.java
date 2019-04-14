@@ -154,6 +154,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                 if (task.isSuccessful()) {
                     Toast.makeText(Login.this, "Signed in successfully.", Toast.LENGTH_SHORT).show();
+                    Intent service = new Intent(Login.this, BackgroundSoundService.class);
+                    startService(service);
                     Intent intent = new Intent(Login.this, Assistant.class);
                     intent.putExtra("email", md5(email_user));
 
