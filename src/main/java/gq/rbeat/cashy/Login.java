@@ -131,7 +131,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Toast.makeText(Login.this, "Registered successfully.", Toast.LENGTH_SHORT).show();
                     signUser();
                     Intent intent = new Intent(Login.this, Setup.class);
-                    intent.putExtra("email", md5(email_user));
+                    intent.putExtra("email", email_user);
                     startActivity(intent);
 
                 } else {
@@ -186,7 +186,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Intent service = new Intent(Login.this, BackgroundSoundService.class);
                     startService(service);
                     Intent intent = new Intent(Login.this, Assistant.class);
-                    intent.putExtra("email", md5(email_user));
+                    intent.putExtra("email", (md5(email_user)));
 
                     startActivity(intent);
 

@@ -50,9 +50,9 @@ public class Setup extends AppCompatActivity implements View.OnClickListener {
         User user = new User(name, email);
         user.setPersonalBalance(balance);
         user.setCreditBalance(creditBalance);
-        mDatabase.child("Users").child(email).setValue(user);
+        mDatabase.child("Users").child(md5(email)).setValue(user);
         Intent intent = new Intent(Setup.this, Assistant.class);
-        intent.putExtra("email", email);
+        intent.putExtra("email", md5(email));
         startActivity(intent);
     }
 
