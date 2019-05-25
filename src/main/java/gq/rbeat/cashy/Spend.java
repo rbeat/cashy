@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.security.MessageDigest;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 
@@ -48,6 +53,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
                 tts.speak("Tell me, how much you want to spend? Spend on what?", TextToSpeech.QUEUE_FLUSH, null);
+                anim();
             }
 
             @Override
@@ -81,7 +87,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void spend(Double sum, String text) {
-        current.makePayment(text, sum);
+        current.makePayment(text + " / " + getDateTime(), sum);
         mDatabase.child(email).setValue(current);
         Intent intent = new Intent(Spend.this, Assistant.class);
         intent.putExtra("email", email);
@@ -103,6 +109,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
                     spend(Double.parseDouble(sumItem.getText().toString()), nameItem.getText().toString());
                 } else {
                     hideKeyboard(this);
+                    anim();
                     spendText1.setText("Your out of money, \nbut you do have credit. Wanna proceed?");
                     tts.speak("Your out of money, but you do have credit. Wanna proceed?", TextToSpeech.QUEUE_FLUSH, null);
                     imgView.setImageResource(R.drawable.confused);
@@ -113,11 +120,19 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
                     confirm.setVisibility(View.VISIBLE);
                 }
             } else {
+                anim();
                 Toast.makeText(this, "Sorry, you don't have enough money to spend. You have bills to pay.", Toast.LENGTH_SHORT).show();
                 tts.speak("Sorry, you don't have enough money to spend. You have bills to pay.", TextToSpeech.QUEUE_FLUSH, null);
                 imgView.setImageResource(R.drawable.angry);
             }
         }
+    }
+
+    public void anim() {
+        ImageView image = findViewById(R.id.imgView);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.bounce);
+        image.startAnimation(animation);
     }
 
     public static void hideKeyboard(Activity activity) {
@@ -129,5 +144,11 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
             activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
+
+    private String getDateTime() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
 
 }

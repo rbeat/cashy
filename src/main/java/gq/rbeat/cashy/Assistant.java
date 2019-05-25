@@ -71,6 +71,12 @@ public class Assistant extends AppCompatActivity {
                 mDatabase.child(email).setValue(current);
                 name = current.getName();
                 String welcomeScreen = "Welcome, " + name + "!";
+                try {
+                    Thread.sleep(4000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                stopService(new Intent(Assistant.this, BackgroundSoundService.class));
                 spend.setVisibility(View.VISIBLE);
                 add.setVisibility(View.VISIBLE);
                 balance.setVisibility(View.VISIBLE);

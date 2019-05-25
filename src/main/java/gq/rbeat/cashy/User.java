@@ -38,6 +38,10 @@ public class User {
         this.name = name;
     }
 
+    public void removePayment(int i) {
+        this.payment.removePayment(i);
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -55,8 +59,8 @@ public class User {
         balance.setDebt(toPay.calculateSum());
     }
 
-    public void removeToPay(String name) {
-        toPay.removeToPay(name);
+    public void removeToPay(int i) {
+        toPay.removeToPay(i);
     }
 
     public void makePayment(String name, Double sum) {

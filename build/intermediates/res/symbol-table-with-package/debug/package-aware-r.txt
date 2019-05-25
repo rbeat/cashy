@@ -1193,6 +1193,7 @@ id line3
 id listBills
 id listMode
 id list_item
+id loginLogo
 id logout
 id masked
 id media_actions
@@ -1414,7 +1415,6 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu menu
 mipmap ic_launcher
-mipmap ic_launcher_round
 raw idil
 raw splash
 string abc_action_bar_home_description

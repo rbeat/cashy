@@ -5,6 +5,8 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -85,10 +87,16 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
     }
 
     public void init() {
-
-
+        anim();
         creditSum.setHint("Current: " + cred);
         tts.speak("Got some moneys? Got more credit?", TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    public void anim() {
+        ImageView image = findViewById(R.id.imgView);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.bounce);
+        image.startAnimation(animation);
     }
 
     @Override

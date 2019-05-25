@@ -5,6 +5,8 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,6 +42,7 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
+                anim();
                 tts.speak("Let's add your bills. One bill, two bill, three...", TextToSpeech.QUEUE_FLUSH, null);
             }
 
@@ -66,6 +69,13 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
         add.setOnClickListener(this);
 
 
+    }
+
+    public void anim() {
+        ImageView image = findViewById(R.id.imgView);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.bounce);
+        image.startAnimation(animation);
     }
 
 

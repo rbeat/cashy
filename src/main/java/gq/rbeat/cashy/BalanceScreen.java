@@ -5,6 +5,8 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -62,7 +64,15 @@ public class BalanceScreen extends AppCompatActivity {
 
     }
 
+    public void anim() {
+        ImageView image = findViewById(R.id.imgView);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.bounce);
+        image.startAnimation(animation);
+    }
+
     public void continueBalance() {
+        anim();
         tts.speak("Here's how broke we are.", TextToSpeech.QUEUE_FLUSH, null);
         current.recalculateAvailable();
         Double balance = current.getPersonalBalance();

@@ -33,7 +33,7 @@ public class BillsAdapter extends ArrayAdapter<String> {
         TextView right = convertView.findViewById(R.id.right);
         // Populate the data into the template view using the data object
         left.setText(name);
-        right.setText(new DecimalFormat("##.##").format(sum));
+        right.setText("Amount: " + new DecimalFormat("##.##").format(sum));
         // Return the completed view to render on screen
         return convertView;
     }

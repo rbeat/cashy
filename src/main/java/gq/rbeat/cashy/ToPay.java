@@ -34,12 +34,8 @@ public class ToPay {
         return this.sum;
     }
 
-    public void removeToPay(String name) {
-        for (int i = 0; i < sum.size(); i++) {
-            if (this.name.get(i).equals(name)) {
-                this.name.remove(i);
-                this.sum.remove(i);
-            }
-        }
+    public void removeToPay(int i) {
+        this.name.remove(i);
+        this.sum.remove(i);
     }
 }

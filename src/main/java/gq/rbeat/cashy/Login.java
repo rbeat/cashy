@@ -15,6 +15,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,7 +30,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText email, password;
     Button signInBt, regBt;
     FirebaseAuth firebaseAuth;
-    Animation animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         signInBt.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
         regBt.setOnClickListener(this);
-        animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
+        anim(this);
 
+    }
+
+    public void anim(Login view) {
+        ImageView image = findViewById(R.id.loginLogo);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.bounce);
+        image.startAnimation(animation);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
