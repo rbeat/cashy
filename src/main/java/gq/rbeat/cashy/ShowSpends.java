@@ -25,7 +25,7 @@ public class ShowSpends extends AppCompatActivity {
     TextToSpeech tts;
     ImageView imgView;
     private ListView listView;
-    private BillsAdapter adapter;
+    private PaymentsAdapter adapter;
 
     private DatabaseReference mDatabase;
 
@@ -68,7 +68,7 @@ public class ShowSpends extends AppCompatActivity {
 
     public void getBills() {
         listView = findViewById(R.id.listBills);
-        adapter = new BillsAdapter(this, current.getToPay());
+        adapter = new PaymentsAdapter(this, current.getPayment());
         listView.setAdapter(adapter);
 
     }

@@ -44,7 +44,7 @@
 
         <TextView
             android:id="@+id/spendText1"
-            android:layout_width="wrap_content"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Tell me, how much you want to spend?"
@@ -65,12 +65,12 @@
 
         <TextView
             android:id="@+id/spendText2"
-            android:visibility="visible"
-            android:layout_width="wrap_content"
+            android:layout_width="315dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="What you are spending it on?"
             android:textSize="35dp"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

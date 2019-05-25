@@ -42,6 +42,14 @@ public class User {
         this.email = email;
     }
 
+    public void setPayment() {
+        this.payment = new Payment();
+    }
+
+    public Payment getPayment() {
+        return this.payment;
+    }
+
     public void addToPay(String name, Double sum) {
         toPay.addToPay(name, sum);
         balance.setDebt(toPay.calculateSum());
