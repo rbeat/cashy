@@ -1178,6 +1178,7 @@ id icon
 id icon_group
 id icon_only
 id ifRoom
+id iforgot
 id image
 id imgView
 id info

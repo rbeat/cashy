@@ -28,7 +28,7 @@ import java.security.MessageDigest;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     EditText email, password;
-    Button signInBt, regBt;
+    Button signInBt, regBt, iForgot;
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -40,6 +40,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         signInBt = findViewById(R.id.signInBt);
         regBt = findViewById(R.id.regBt);
         signInBt.setOnClickListener(this);
+        iForgot = findViewById(R.id.iforgot);
+        iForgot.setOnClickListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
         regBt.setOnClickListener(this);
         anim(this);
@@ -139,6 +141,26 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
+    public void iForgotAction() {
+        final String email_user = email.getText().toString();
+        if (TextUtils.isEmpty(email_user)) {
+            Toast.makeText(this, "Enter your email and then, click \"Forgot password?\" again.", Toast.LENGTH_LONG).show();
+            return;
+        }
+        firebaseAuth.sendPasswordResetEmail(email_user)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Login.this, "Check your email for password recovery instructions.", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(Login.this, "Failed. Check the email or try again later.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+    }
+
     public void signUser() {
         final String email_user = email.getText().toString();
         String password_user = password.getText().toString();
@@ -179,6 +201,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         if (v == signInBt) {
             signUser();
+        }
+
+        if (v == iForgot) {
+            iForgotAction();
         }
 
         if (v == regBt) {
