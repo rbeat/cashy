@@ -36,6 +36,7 @@ public class BalanceScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_balance_screen);
         Intent intent = getIntent();
+        imgView = findViewById(R.id.imgView);
         email = intent.getStringExtra("email");
         tv = findViewById(R.id.textBalance);
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -81,16 +82,19 @@ public class BalanceScreen extends AppCompatActivity {
 
         Double available = current.getAvailable();
 
-        if (balance <= 10) {
-            if (available <= 10) {
-                imgView.setImageResource(R.drawable.angry);
-                tts.speak("Man, stop spending your money. You are too low on balance.", TextToSpeech.QUEUE_ADD, null);
-            } else {
-                tts.speak("Be careful, you are spending the credit money right now.", TextToSpeech.QUEUE_ADD, null);
-                imgView.setImageResource(R.drawable.confused);
-            }
-        } else {
-            tts.speak("Just kidding. We are OK.", TextToSpeech.QUEUE_ADD, null);
+        if (balance <= 35) {
+            imgView.setImageResource(R.drawable.confused);
+            tts.speak("Be careful! You're low on balance.", TextToSpeech.QUEUE_ADD, null);
+        }
+
+        if (available <= 35) {
+            imgView.setImageResource(R.drawable.angry);
+            tts.speak("Man, stop spending your money. You are too low on balance and credit.", TextToSpeech.QUEUE_ADD, null);
+        }
+
+        if (available > 35 && balance > 35) {
+            imgView.setImageResource(R.drawable.angry);
+            tts.speak("No worries. Everything's OK.", TextToSpeech.QUEUE_ADD, null);
         }
         tv.setText("Balance: " + new DecimalFormat("##.##").format(balance) + "\nCredit: " + new DecimalFormat("##.##").format(credit) + "\nAvailable: " + new DecimalFormat("##.##").format(available));
 

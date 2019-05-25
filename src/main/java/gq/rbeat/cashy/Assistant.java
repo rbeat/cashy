@@ -2,6 +2,7 @@ package gq.rbeat.cashy;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -85,6 +86,10 @@ public class Assistant extends AppCompatActivity {
                 showSpends.setVisibility(View.VISIBLE);
                 textExample.setText(welcomeScreen);
                 animation.start();
+                if (current.getAvailable() <= 35) {
+                    balance.setTextColor(Color.RED);
+                    balance.setText(" Current balance (!!!) ");
+                }
                 tts.speak(welcomeScreen + "What you gonna do today?", TextToSpeech.QUEUE_FLUSH, null);
             }
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -78,6 +79,7 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
         Double toPut = current.getPersonalBalance() + sum;
         current.setPersonalBalance(toPut);
         current.setCreditBalance(credit);
+
         mDatabase.child(email).setValue(current);
         Toast.makeText(this, "OK, adding them to DB...", Toast.LENGTH_SHORT).show();
         tts.speak("OK, adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
@@ -104,8 +106,12 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
         if (v == add) {
             Double cashToAdd = Double.parseDouble(addSum.getText().toString());
             Double creditAdd = current.getCreditBalance();
-            if (creditSum.getText() != null)
+            if (TextUtils.isEmpty(creditSum.getText())) {
+                
+            } else {
                 creditAdd = Double.parseDouble(creditSum.getText().toString());
+            }
+
             addCash(cashToAdd, creditAdd);
         }
     }
