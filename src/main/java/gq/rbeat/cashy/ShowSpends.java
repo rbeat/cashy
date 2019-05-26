@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,8 +29,10 @@ import java.util.Locale;
 public class ShowSpends extends AppCompatActivity {
 
     TextView tv;
+    EditText search;
     String email;
     User current;
+    Payment payment;
     TextToSpeech tts;
     ImageView imgView;
     private ListView listView;
@@ -43,6 +48,8 @@ public class ShowSpends extends AppCompatActivity {
         setContentView(R.layout.activity_show_spends);
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
+        listView = findViewById(R.id.listBills);
+        search = findViewById(R.id.search);
         tv = findViewById(R.id.textBalance);
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -70,6 +77,36 @@ public class ShowSpends extends AppCompatActivity {
             }
         });
 
+        search.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s == null) {
+                    payment = current.getPayment();
+                }
+                Payment temp = new Payment();
+                String str = s.toString();
+                for (int i = 0; i < current.getPayment().getName().size(); i++) {
+                    if (current.getPayment().getName().get(i).toLowerCase().contains(str.toLowerCase())) {
+                        temp.add(current.getPayment().getName().get(i), current.getPayment().getSum().get(i));
+                    }
+                }
+                payment = temp;
+                adapter = new PaymentsAdapter(ShowSpends.this, payment);
+                listView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
 
     public void anim() {
@@ -80,8 +117,8 @@ public class ShowSpends extends AppCompatActivity {
     }
 
     public void getBills() {
-        listView = findViewById(R.id.listBills);
-        adapter = new PaymentsAdapter(this, current.getPayment());
+        payment = current.getPayment();
+        adapter = new PaymentsAdapter(this, payment);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -93,7 +130,7 @@ public class ShowSpends extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                current.removePayment(position);
+                                current.removePayment(payment.getName().get(position));
                                 mDatabase.child(email).setValue(current);
                                 Toast.makeText(ShowSpends.this, "Item removed successfully", Toast.LENGTH_SHORT).show();
                                 finish();

@@ -9,11 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,10 +33,12 @@ import java.util.Locale;
 public class ShowBills extends AppCompatActivity {
 
     TextView tv;
+    ToPay toPay;
     String email;
     User current;
     TextToSpeech tts;
     ImageView imgView;
+    EditText search;
     private ListView listView;
     private BillsAdapter adapter;
 
@@ -48,6 +53,7 @@ public class ShowBills extends AppCompatActivity {
         Intent intent = getIntent();
         email = intent.getStringExtra("email");
         tv = findViewById(R.id.textBalance);
+        search = findViewById(R.id.search);
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -72,11 +78,44 @@ public class ShowBills extends AppCompatActivity {
             }
         });
 
+        search.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s == null) {
+                    toPay = current.getToPay();
+                }
+                ToPay temp = new ToPay();
+                String str = s.toString();
+                for (int i = 0; i < current.getToPay().getName().size(); i++) {
+                    if (current.getToPay().getName().get(i).toLowerCase().contains(str.toLowerCase())) {
+                        temp.addToPay(current.getToPay().getName().get(i), current.getToPay().getSum().get(i));
+                    }
+                }
+                toPay = temp;
+                adapter = new BillsAdapter(ShowBills.this, toPay);
+                listView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
     }
+
 
     public void getBills() {
         listView = findViewById(R.id.listBills);
-        adapter = new BillsAdapter(this, current.getToPay());
+        toPay = current.getToPay();
+        adapter = new BillsAdapter(this, toPay);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -110,4 +149,6 @@ public class ShowBills extends AppCompatActivity {
                 R.anim.bounce);
         image.startAnimation(animation);
     }
+
+
 }

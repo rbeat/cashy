@@ -38,7 +38,7 @@ public class User {
         this.name = name;
     }
 
-    public void removePayment(int i) {
+    public void removePayment(String i) {
         this.payment.removePayment(i);
     }
 

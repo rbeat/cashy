@@ -18,6 +18,11 @@ public class Payment {
         balance.spend(sum);
     }
 
+    public void add(String name, Double sum) {
+        this.name.add(name);
+        this.sum.add(sum);
+    }
+
     public void removeLast() {
         this.name.remove(this.name.size() - 1);
         this.sum.remove(this.name.size() - 1);
@@ -31,9 +36,13 @@ public class Payment {
         return this.sum;
     }
 
-    public void removePayment(int i) {
-        this.name.remove(i);
-        this.sum.remove(i);
+    public void removePayment(String i) {
+        for (int y = 0; y < this.name.size(); y++) {
+            if (i.equals(this.name.get(y))) {
+                this.name.remove(y);
+                this.sum.remove(y);
+            }
+        }
     }
 }
 
