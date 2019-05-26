@@ -44,6 +44,7 @@ public class Setup extends AppCompatActivity implements View.OnClickListener {
             }
         });
         tts.speak("Hey! Welcome to Cashy! Tell me, what's your name, and your current balance, so we could proceed.", TextToSpeech.QUEUE_FLUSH, null);
+
     }
 
     public void createUser(String name, double balance, double creditBalance) {

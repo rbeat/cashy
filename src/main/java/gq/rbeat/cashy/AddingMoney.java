@@ -91,7 +91,9 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
     public void init() {
         anim();
         creditSum.setHint("Current: " + cred);
-        tts.speak("Got some moneys? Got more credit?", TextToSpeech.QUEUE_FLUSH, null);
+        if (!current.getIsMuted()) {
+            tts.speak("Got some moneys? Got more credit?", TextToSpeech.QUEUE_FLUSH, null);
+        }
     }
 
     public void anim() {
@@ -107,7 +109,7 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
             Double cashToAdd = Double.parseDouble(addSum.getText().toString());
             Double creditAdd = current.getCreditBalance();
             if (TextUtils.isEmpty(creditSum.getText())) {
-                
+
             } else {
                 creditAdd = Double.parseDouble(creditSum.getText().toString());
             }

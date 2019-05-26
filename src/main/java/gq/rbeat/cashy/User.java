@@ -8,6 +8,7 @@ public class User {
     private Balance balance;
     private ToPay toPay;
     private Payment payment;
+    private boolean isMuted;
 
     public User() {
         this.name = "John Appleseed";
@@ -15,6 +16,7 @@ public class User {
         this.balance = new Balance();
         this.toPay = new ToPay();
         this.payment = new Payment();
+        this.isMuted = true;
     }
 
     public User(String name, String email) {
@@ -23,7 +25,22 @@ public class User {
         this.balance = new Balance();
         this.toPay = new ToPay();
         this.payment = new Payment();
+        this.isMuted = true;
+    }
 
+    public boolean getIsMuted() {
+        return this.isMuted;
+    }
+
+    public void setIsMuted(boolean tts) {
+        this.isMuted = tts;
+    }
+
+    public void toggleTTS() {
+        if (this.isMuted)
+            isMuted = false;
+        if (!this.isMuted)
+            isMuted = true;
     }
 
     public String getName() {

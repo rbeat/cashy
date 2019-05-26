@@ -69,7 +69,9 @@ public class ShowBills extends AppCompatActivity {
                 current = dataSnapshot.child(email).getValue(User.class);
                 getBills();
                 anim();
-                tts.speak("Here's what you should save your money for.", TextToSpeech.QUEUE_FLUSH, null);
+                if (!current.getIsMuted()) {
+                    tts.speak("Here's what you should save your money for.", TextToSpeech.QUEUE_FLUSH, null);
+                }
             }
 
             @Override

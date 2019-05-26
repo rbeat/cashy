@@ -112,6 +112,15 @@
             android:text=" Show my spends " />
 
         <Button
+            android:id="@+id/mute"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_button"
+            android:visibility="gone"
+            android:text=" Mute Assistant " />
+
+        <Button
             android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="30dp"

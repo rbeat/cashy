@@ -52,7 +52,9 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
-                tts.speak("Tell me, how much you want to spend? Spend on what?", TextToSpeech.QUEUE_FLUSH, null);
+                if (!current.getIsMuted()) {
+                    tts.speak("Tell me, how much you want to spend? Spend on what?", TextToSpeech.QUEUE_FLUSH, null);
+                }
                 anim();
             }
 
@@ -98,20 +100,26 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         if (v == confirm) {
             Toast.makeText(this, "OK, you can spend them. Adding them to DB...", Toast.LENGTH_SHORT).show();
-            tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
+            if (!current.getIsMuted()) {
+                tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
+            }
             spend(Double.parseDouble(sumItem.getText().toString()), nameItem.getText().toString());
         }
         if (v == spendActionBt) {
             if (current.getAvailable() > Double.parseDouble(sumItem.getText().toString())) {
                 if (current.getPersonalBalance() > Double.parseDouble(sumItem.getText().toString())) {
                     Toast.makeText(this, "OK, you can spend them. Adding them to DB...", Toast.LENGTH_SHORT).show();
-                    tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
+                    if (!current.getIsMuted()) {
+                        tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
+                    }
                     spend(Double.parseDouble(sumItem.getText().toString()), nameItem.getText().toString());
                 } else {
                     hideKeyboard(this);
                     anim();
                     spendText1.setText("Your out of money, \nbut you do have credit. Wanna proceed?");
-                    tts.speak("Your out of money, but you do have credit. Wanna proceed?", TextToSpeech.QUEUE_FLUSH, null);
+                    if (!current.getIsMuted()) {
+                        tts.speak("Your out of money, but you do have credit. Wanna proceed?", TextToSpeech.QUEUE_FLUSH, null);
+                    }
                     imgView.setImageResource(R.drawable.confused);
                     spendText2.setVisibility(View.GONE);
                     spendActionBt.setVisibility(View.GONE);
@@ -122,7 +130,9 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
             } else {
                 anim();
                 Toast.makeText(this, "Sorry, you don't have enough money to spend. You have bills to pay.", Toast.LENGTH_SHORT).show();
-                tts.speak("Sorry, you don't have enough money to spend. You have bills to pay.", TextToSpeech.QUEUE_FLUSH, null);
+                if (!current.getIsMuted()) {
+                    tts.speak("Sorry, you don't have enough money to spend. You have bills to pay.", TextToSpeech.QUEUE_FLUSH, null);
+                }
                 imgView.setImageResource(R.drawable.angry);
             }
         }

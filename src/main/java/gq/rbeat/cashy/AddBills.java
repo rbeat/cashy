@@ -43,7 +43,9 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
                 anim();
-                tts.speak("Let's add your bills. One bill, two bill, three...", TextToSpeech.QUEUE_FLUSH, null);
+                if (!current.getIsMuted()) {
+                    tts.speak("Let's add your bills. One bill, two bill, three...", TextToSpeech.QUEUE_FLUSH, null);
+                }
             }
 
             @Override

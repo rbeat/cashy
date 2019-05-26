@@ -74,30 +74,39 @@ public class BalanceScreen extends AppCompatActivity {
 
     public void continueBalance() {
         anim();
-        tts.speak("Here's how broke we are.", TextToSpeech.QUEUE_FLUSH, null);
         current.recalculateAvailable();
         Double balance = current.getPersonalBalance();
 
         Double credit = current.getCreditBalance();
 
         Double available = current.getAvailable();
+        if (!current.getIsMuted()) {
+            tts.speak("Here's how broke we are.", TextToSpeech.QUEUE_FLUSH, null);
+
+
+            if (balance <= 35) {
+                tts.speak("Be careful! You're low on balance.", TextToSpeech.QUEUE_ADD, null);
+            }
+
+            if (available <= 35) {
+                tts.speak("Man, stop spending your money. You are too low on balance and credit.", TextToSpeech.QUEUE_ADD, null);
+            }
+
+            if (available > 35 && balance > 35) {
+                tts.speak("No worries. Everything's OK.", TextToSpeech.QUEUE_ADD, null);
+            }
+        }
 
         if (balance <= 35) {
             imgView.setImageResource(R.drawable.confused);
-            tts.speak("Be careful! You're low on balance.", TextToSpeech.QUEUE_ADD, null);
         }
 
         if (available <= 35) {
             imgView.setImageResource(R.drawable.angry);
-            tts.speak("Man, stop spending your money. You are too low on balance and credit.", TextToSpeech.QUEUE_ADD, null);
         }
 
-        if (available > 35 && balance > 35) {
-            imgView.setImageResource(R.drawable.angry);
-            tts.speak("No worries. Everything's OK.", TextToSpeech.QUEUE_ADD, null);
-        }
+
         tv.setText("Balance: " + new DecimalFormat("##.##").format(balance) + "\nCredit: " + new DecimalFormat("##.##").format(credit) + "\nAvailable: " + new DecimalFormat("##.##").format(available));
-
     }
 
 

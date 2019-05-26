@@ -66,7 +66,9 @@ public class ShowSpends extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
                 getBills();
-                tts.speak("Here's what you spent your money on.", TextToSpeech.QUEUE_FLUSH, null);
+                if (!current.getIsMuted()) {
+                    tts.speak("Here's what you spent your money on.", TextToSpeech.QUEUE_FLUSH, null);
+                }
                 anim();
 
             }

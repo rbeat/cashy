@@ -28,7 +28,7 @@ public class Assistant extends AppCompatActivity {
 
     TextView textExample;
     ImageView imgView;
-    Button add, spend, balance, bills, showBills, showSpends, logout;
+    Button add, spend, balance, bills, showBills, showSpends, logout, mute;
     TextToSpeech tts;
     DatabaseReference mDatabase;
     String name, email;
@@ -56,6 +56,7 @@ public class Assistant extends AppCompatActivity {
         animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bounce);
         setContentView(R.layout.activity_assistant2);
         add = findViewById(R.id.add);
+        mute = findViewById(R.id.mute);
         textExample = findViewById(R.id.textExample);
         imgView = findViewById(R.id.imgView);
         spend = findViewById(R.id.spendBt);
@@ -64,6 +65,7 @@ public class Assistant extends AppCompatActivity {
         logout = findViewById(R.id.logout);
         showBills = findViewById(R.id.showBillsBt);
         showSpends = findViewById(R.id.showSpendsBt);
+
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -80,6 +82,7 @@ public class Assistant extends AppCompatActivity {
                 stopService(new Intent(Assistant.this, BackgroundSoundService.class));
                 spend.setVisibility(View.VISIBLE);
                 add.setVisibility(View.VISIBLE);
+                mute.setVisibility(View.VISIBLE);
                 balance.setVisibility(View.VISIBLE);
                 showBills.setVisibility(View.VISIBLE);
                 bills.setVisibility(View.VISIBLE);
@@ -90,7 +93,11 @@ public class Assistant extends AppCompatActivity {
                     balance.setTextColor(Color.RED);
                     balance.setText(" Current balance (!!!) ");
                 }
-                tts.speak(welcomeScreen + "What you gonna do today?", TextToSpeech.QUEUE_FLUSH, null);
+                if (!current.getIsMuted()) {
+                    tts.speak(welcomeScreen + "What you gonna do today?", TextToSpeech.QUEUE_FLUSH, null);
+                } else {
+                    mute.setText("UnMute Assistant");
+                }
             }
 
             @Override
@@ -169,6 +176,16 @@ public class Assistant extends AppCompatActivity {
                 Intent intent = new Intent(Assistant.this, ShowSpends.class);
                 intent.putExtra("email", email);
                 startActivity(intent);
+            }
+        });
+
+        mute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                current.toggleTTS();
+                mDatabase.child(email).setValue(current);
+                finish();
+                startActivity(getIntent());
             }
         });
     }
