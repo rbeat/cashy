@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Getting information..."
+            android:text="@string/getting_info"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -65,7 +65,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Get back " />
+            android:text="@string/ok" />
 
 
     </LinearLayout>

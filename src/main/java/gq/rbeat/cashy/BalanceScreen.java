@@ -43,7 +43,7 @@ public class BalanceScreen extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    tts.setLanguage(new Locale("en_US"));
+                    tts.setLanguage(new Locale(getString(R.string.tts_lang)));
                 }
             }
         });
@@ -58,7 +58,7 @@ public class BalanceScreen extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(BalanceScreen.this, "Error while fetching data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BalanceScreen.this, "" + getString(R.string.error_getting_data), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -81,19 +81,19 @@ public class BalanceScreen extends AppCompatActivity {
 
         Double available = current.getAvailable();
         if (!current.getIsMuted()) {
-            tts.speak("Here's how broke we are.", TextToSpeech.QUEUE_FLUSH, null);
+            tts.speak(getString(R.string.intro_balance_tts), TextToSpeech.QUEUE_FLUSH, null);
 
 
             if (balance <= 35) {
-                tts.speak("Be careful! You're low on balance.", TextToSpeech.QUEUE_ADD, null);
+                tts.speak(getString(R.string.low_balance_tts), TextToSpeech.QUEUE_ADD, null);
             }
 
             if (available <= 35) {
-                tts.speak("Man, stop spending your money. You are too low on balance and credit.", TextToSpeech.QUEUE_ADD, null);
+                tts.speak(getString(R.string.low_available_tts), TextToSpeech.QUEUE_ADD, null);
             }
 
             if (available > 35 && balance > 35) {
-                tts.speak("No worries. Everything's OK.", TextToSpeech.QUEUE_ADD, null);
+                tts.speak(getString(R.string.ok_available_tts), TextToSpeech.QUEUE_ADD, null);
             }
         }
 
@@ -106,7 +106,7 @@ public class BalanceScreen extends AppCompatActivity {
         }
 
 
-        tv.setText("Balance: " + new DecimalFormat("##.##").format(balance) + "\nCredit: " + new DecimalFormat("##.##").format(credit) + "\nAvailable: " + new DecimalFormat("##.##").format(available));
+        tv.setText(getString(R.string.balance) + " " + new DecimalFormat("##.##").format(balance) + "\n" + getString(R.string.credit) + " " + new DecimalFormat("##.##").format(credit) + "\n" + getString(R.string.available) + " " + new DecimalFormat("##.##").format(available));
     }
 
 

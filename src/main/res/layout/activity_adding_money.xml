@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Got some moneyz?"
+            android:text="@string/add_money_tv1"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -61,7 +61,7 @@
             android:id="@+id/sumAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Sum to add. (Example: 75.38)" />
+            android:hint="@string/add_money_et1" />
 
 
         <TextView
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Got bigger credit? \nChange it."
+            android:text="@string/add_money_tv2"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -83,7 +83,7 @@
             android:id="@+id/creditAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Current balance: Getting..." />
+            android:hint="@string/add_money_et2" />
 
     </LinearLayout>
 
@@ -107,7 +107,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
-            android:text=" Add " />
+            android:text="@string/add_money_bt" />
 
 
     </LinearLayout>

@@ -46,7 +46,7 @@ public class Assistant extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    tts.setLanguage(new Locale("en_US"));
+                    tts.setLanguage(new Locale(getString(R.string.tts_lang)));
                 }
             }
         });
@@ -73,7 +73,7 @@ public class Assistant extends AppCompatActivity {
                 current.recalculateAvailable();
                 mDatabase.child(email).setValue(current);
                 name = current.getName();
-                String welcomeScreen = "Welcome, " + name + "!";
+                String welcomeScreen = getString(R.string.welcome) + " " + name + "!";
                 try {
                     Thread.sleep(4000);
                 } catch (InterruptedException e) {
@@ -91,18 +91,18 @@ public class Assistant extends AppCompatActivity {
                 animation.start();
                 if (current.getAvailable() <= 35) {
                     balance.setTextColor(Color.RED);
-                    balance.setText(" Current balance (!!!) ");
+                    balance.setText(getString(R.string.current_balance_warning));
                 }
                 if (!current.getIsMuted()) {
-                    tts.speak(welcomeScreen + "What you gonna do today?", TextToSpeech.QUEUE_FLUSH, null);
+                    tts.speak(welcomeScreen + getString(R.string.intro_tts), TextToSpeech.QUEUE_FLUSH, null);
                 } else {
-                    mute.setText("UnMute Assistant");
+                    mute.setText(getString(R.string.unmute_tts));
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(Assistant.this, "Error while fetching data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Assistant.this, getString(R.string.error_getting_data), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -130,16 +130,16 @@ public class Assistant extends AppCompatActivity {
 
                 new AlertDialog.Builder(Assistant.this)
                         .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("Logout")
-                        .setMessage("Are you sure you want to logout?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setTitle(getString(R.string.logout))
+                        .setMessage(getString(R.string.sure_logout))
+                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 finish();
                             }
 
                         })
-                        .setNegativeButton("No", null)
+                        .setNegativeButton(getString(R.string.no), null)
                         .show();
             }
         });

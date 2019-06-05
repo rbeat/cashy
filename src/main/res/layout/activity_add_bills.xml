@@ -48,7 +48,7 @@
             android:layout_width="322dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Let's say, you need to pay for something monthly. \nHow much you need to spend on it?"
+            android:text="@string/add_bills_tv1"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -60,7 +60,7 @@
             android:id="@+id/sumBill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Sum to pay. (Example: 75.38)"
+            android:hint="@string/add_bills_et1"
             android:inputType="numberDecimal" />
 
 
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="What is it? \Name it."
+            android:text="@string/add_bills_tv2"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -82,7 +82,7 @@
             android:id="@+id/nameBills"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Name. (Example: Internet)" />
+            android:hint="@string/add_bills_et2" />
 
     </LinearLayout>
 
@@ -106,7 +106,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
-            android:text=" Add " />
+            android:text="@string/add_bills_bt" />
 
 
     </LinearLayout>

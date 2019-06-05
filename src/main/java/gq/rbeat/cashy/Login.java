@@ -66,10 +66,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         switch (item.getItemId()) {
             case R.id.about: {
                 new AlertDialog.Builder(Login.this)
-                        .setTitle("About")
-                        .setMessage("Cashy: Your true money bro.\nCreated by Rodion Grinberg\nhttp://rbeat.gq\nadmin@rbeat.gq")
+                        .setTitle(getString(R.string.about))
+                        .setMessage(getString(R.string.about_message))
                         .setCancelable(false)
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
@@ -83,14 +83,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
                 builder.setTitle(R.string.app_name);
                 builder.setIcon(R.mipmap.ic_launcher);
-                builder.setMessage("Do you want to exit?")
+                builder.setMessage(getString(R.string.sure_exit))
                         .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 finish();
                             }
                         })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
                             }
@@ -112,13 +112,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         String password_user = password.getText().toString();
 
         if (TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password_user)) {
-            Toast.makeText(this, "Please, check whether you entered all of the fields.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.check_fields), Toast.LENGTH_LONG).show();
             return;
         }
         email.setEnabled(false);
         password.setEnabled(false);
 
-        Toast.makeText(Login.this, "Registering...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Login.this, getString(R.string.operation_registering), Toast.LENGTH_SHORT).show();
 
         firebaseAuth.createUserWithEmailAndPassword(email_user, password_user).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -128,14 +128,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 password.setEnabled(true);
 
                 if (task.isSuccessful()) {
-                    Toast.makeText(Login.this, "Registered successfully.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getString(R.string.register_success), Toast.LENGTH_SHORT).show();
                     signUser();
                     Intent intent = new Intent(Login.this, Setup.class);
                     intent.putExtra("email", email_user);
                     startActivity(intent);
 
                 } else {
-                    Toast.makeText(Login.this, "Fail. Try again later.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getString(R.string.register_fail), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -144,7 +144,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void iForgotAction() {
         final String email_user = email.getText().toString();
         if (TextUtils.isEmpty(email_user)) {
-            Toast.makeText(this, "Enter your email and then, click \"Forgot password?\" again.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.iforgot_instructions), Toast.LENGTH_LONG).show();
             return;
         }
         firebaseAuth.sendPasswordResetEmail(email_user)
@@ -152,9 +152,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(Login.this, "Check your email for password recovery instructions.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Login.this, getString(R.string.iforgot_success), Toast.LENGTH_LONG).show();
                         } else {
-                            Toast.makeText(Login.this, "Failed. Check the email or try again later.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Login.this, getString(R.string.iforgot_fail), Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -166,13 +166,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         String password_user = password.getText().toString();
 
         if (TextUtils.isEmpty(email_user) || TextUtils.isEmpty(password_user)) {
-            Toast.makeText(this, "Please, check whether you entered all of the fields.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.check_fields), Toast.LENGTH_LONG).show();
             return;
         }
         email.setEnabled(false);
         password.setEnabled(false);
 
-        Toast.makeText(Login.this, "Signing in...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Login.this, getString(R.string.operation_signing_in), Toast.LENGTH_SHORT).show();
 
         firebaseAuth.signInWithEmailAndPassword(email_user, password_user).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
@@ -182,7 +182,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 password.setEnabled(true);
 
                 if (task.isSuccessful()) {
-                    Toast.makeText(Login.this, "Signed in successfully.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getString(R.string.sign_in_success), Toast.LENGTH_SHORT).show();
                     Intent service = new Intent(Login.this, BackgroundSoundService.class);
                     startService(service);
                     Intent intent = new Intent(Login.this, Assistant.class);
@@ -191,7 +191,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     startActivity(intent);
 
                 } else {
-                    Toast.makeText(Login.this, "Failed. Try again later.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getString(R.string.sign_in_fail), Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -47,7 +47,7 @@
             android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Tell me, how much you want to spend?"
+            android:text="@string/spend_money_tv1"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -60,7 +60,7 @@
             android:id="@+id/sumItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Sum. (Example: 75.38)" />
+            android:hint="@string/spend_money_et1" />
 
 
         <TextView
@@ -68,7 +68,7 @@
             android:layout_width="315dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="What you are spending it on?"
+            android:text="@string/spend_money_tv2"
             android:textSize="35dp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +81,7 @@
             android:id="@+id/nameItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Name of Item. (Example: Sneakers)" />
+            android:hint="@string/spend_money_et2" />
 
     </LinearLayout>
 
@@ -105,7 +105,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
-            android:text=" Spend " />
+            android:text="@string/spend_money_bt" />
 
         <Button
             android:id="@+id/confirm"
@@ -114,7 +114,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Confirm " />
+            android:text="@string/spend_money_confirm" />
 
     </LinearLayout>
 

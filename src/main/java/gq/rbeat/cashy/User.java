@@ -37,10 +37,11 @@ public class User {
     }
 
     public void toggleTTS() {
-        if (this.isMuted)
+        if (this.isMuted) {
             isMuted = false;
-        if (!this.isMuted)
+        } else {
             isMuted = true;
+        }
     }
 
     public String getName() {

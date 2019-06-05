@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="List of spends"
+            android:text="@string/show_spends_tv"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="To delete spend history - click on its name"
+            android:text="@string/click_2_delete"
             android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -57,7 +57,7 @@
             android:id="@+id/search"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="Search... (Ex. Internet or 05/26)" />
+            android:hint="@string/search" />
 
         <ListView
             android:descendantFocusability="blocksDescendants"

@@ -50,14 +50,14 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(AddingMoney.this, "Error while fetching data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddingMoney.this, getString(R.string.error_getting_data), Toast.LENGTH_SHORT).show();
             }
         });
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    tts.setLanguage(new Locale("en_US"));
+                    tts.setLanguage(new Locale(getString(R.string.tts_lang)));
                 }
             }
         });
@@ -81,8 +81,8 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
         current.setCreditBalance(credit);
 
         mDatabase.child(email).setValue(current);
-        Toast.makeText(this, "OK, adding them to DB...", Toast.LENGTH_SHORT).show();
-        tts.speak("OK, adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
+        Toast.makeText(this, getString(R.string.adding_to_db_toast), Toast.LENGTH_SHORT).show();
+        tts.speak(getString(R.string.adding_to_db_tts), TextToSpeech.QUEUE_FLUSH, null);
         Intent intent = new Intent(AddingMoney.this, Assistant.class);
         intent.putExtra("email", email);
         startActivity(intent);
@@ -90,9 +90,9 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
 
     public void init() {
         anim();
-        creditSum.setHint("Current: " + cred);
+        creditSum.setHint(getString(R.string.current_credit_hint) + cred);
         if (!current.getIsMuted()) {
-            tts.speak("Got some moneys? Got more credit?", TextToSpeech.QUEUE_FLUSH, null);
+            tts.speak(getString(R.string.intro_money_tts), TextToSpeech.QUEUE_FLUSH, null);
         }
     }
 
@@ -106,15 +106,19 @@ public class AddingMoney extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (v == add) {
-            Double cashToAdd = Double.parseDouble(addSum.getText().toString());
-            Double creditAdd = current.getCreditBalance();
-            if (TextUtils.isEmpty(creditSum.getText())) {
-
+            if (TextUtils.isEmpty(addSum.getText()) && TextUtils.isEmpty(creditSum.getText())) {
+                Toast.makeText(this, getString(R.string.check_fields), Toast.LENGTH_SHORT).show();
             } else {
-                creditAdd = Double.parseDouble(creditSum.getText().toString());
-            }
+                Double cashToAdd = Double.parseDouble(addSum.getText().toString());
+                Double creditAdd = current.getCreditBalance();
+                if (TextUtils.isEmpty(creditSum.getText())) {
 
-            addCash(cashToAdd, creditAdd);
+                } else {
+                    creditAdd = Double.parseDouble(creditSum.getText().toString());
+                }
+
+                addCash(cashToAdd, creditAdd);
+            }
         }
     }
 }

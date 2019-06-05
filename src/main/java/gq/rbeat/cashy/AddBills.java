@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -44,20 +45,20 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
                 current = dataSnapshot.child(email).getValue(User.class);
                 anim();
                 if (!current.getIsMuted()) {
-                    tts.speak("Let's add your bills. One bill, two bill, three...", TextToSpeech.QUEUE_FLUSH, null);
+                    tts.speak(getString(R.string.intro_bills_tts), TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(AddBills.this, "Error while fetching data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AddBills.this, getString(R.string.error_getting_data), Toast.LENGTH_SHORT).show();
             }
         });
         tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    tts.setLanguage(new Locale("en_US"));
+                    tts.setLanguage(new Locale(getString(R.string.tts_lang)));
                 }
             }
         });
@@ -84,15 +85,19 @@ public class AddBills extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if (v == add) {
-            Double sum1 = Double.parseDouble(sum.getText().toString());
-            String name1 = name.getText().toString();
-            current.addToPay(name1, sum1);
-            mDatabase.child(email).setValue(current);
-            Toast.makeText(this, "OK. Adding them to DB...", Toast.LENGTH_SHORT).show();
-            tts.speak("OK. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
-            Intent intent = new Intent(AddBills.this, Assistant.class);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (TextUtils.isEmpty(name.getText()) || TextUtils.isEmpty(sum.getText())) {
+                Toast.makeText(this, getString(R.string.check_fields), Toast.LENGTH_SHORT).show();
+            } else {
+                Double sum1 = Double.parseDouble(sum.getText().toString());
+                String name1 = name.getText().toString();
+                current.addToPay(name1, sum1);
+                mDatabase.child(email).setValue(current);
+                Toast.makeText(this, getString(R.string.adding_to_db_toast), Toast.LENGTH_SHORT).show();
+                tts.speak(getString(R.string.adding_to_db_tts), TextToSpeech.QUEUE_FLUSH, null);
+                Intent intent = new Intent(AddBills.this, Assistant.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
         }
     }
 }

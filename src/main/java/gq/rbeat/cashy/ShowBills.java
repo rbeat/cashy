@@ -58,7 +58,7 @@ public class ShowBills extends AppCompatActivity {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    tts.setLanguage(new Locale("en_US"));
+                    tts.setLanguage(new Locale(getString(R.string.tts_lang)));
                 }
             }
         });
@@ -70,13 +70,13 @@ public class ShowBills extends AppCompatActivity {
                 getBills();
                 anim();
                 if (!current.getIsMuted()) {
-                    tts.speak("Here's what you should save your money for.", TextToSpeech.QUEUE_FLUSH, null);
+                    tts.speak(getString(R.string.intro_show_bills_tts), TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(ShowBills.this, "Error while fetching data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ShowBills.this, getString(R.string.error_getting_data), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -124,20 +124,20 @@ public class ShowBills extends AppCompatActivity {
             public void onItemClick(AdapterView<?> arg0, View arg1, final int position, long arg3) {
                 new AlertDialog.Builder(ShowBills.this)
                         .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("Delete")
-                        .setMessage("Are you sure you want to delete this?")
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setTitle(getString(R.string.delete))
+                        .setMessage(getString(R.string.sure_delete))
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 current.removeToPay(position);
                                 mDatabase.child(email).setValue(current);
-                                Toast.makeText(ShowBills.this, "Item removed successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ShowBills.this, getString(R.string.delete_success), Toast.LENGTH_SHORT).show();
                                 finish();
                                 startActivity(getIntent());
                             }
 
                         })
-                        .setNegativeButton("No", null)
+                        .setNegativeButton(getString(R.string.no), null)
                         .show();
 
             }

@@ -7,6 +7,7 @@ import android.inputmethodservice.Keyboard;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -53,14 +54,14 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 current = dataSnapshot.child(email).getValue(User.class);
                 if (!current.getIsMuted()) {
-                    tts.speak("Tell me, how much you want to spend? Spend on what?", TextToSpeech.QUEUE_FLUSH, null);
+                    tts.speak(getString(R.string.intro_spend_money_tts), TextToSpeech.QUEUE_FLUSH, null);
                 }
                 anim();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(Spend.this, "Error while fetching data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Spend.this, getString(R.string.error_getting_data), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -81,7 +82,7 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    tts.setLanguage(new Locale("en_US"));
+                    tts.setLanguage(new Locale(getString(R.string.tts_lang)));
                 }
             }
         });
@@ -99,41 +100,45 @@ public class Spend extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == confirm) {
-            Toast.makeText(this, "OK, you can spend them. Adding them to DB...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.adding_to_db_toast), Toast.LENGTH_SHORT).show();
             if (!current.getIsMuted()) {
-                tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
+                tts.speak(getString(R.string.adding_to_db_tts), TextToSpeech.QUEUE_FLUSH, null);
             }
             spend(Double.parseDouble(sumItem.getText().toString()), nameItem.getText().toString());
         }
         if (v == spendActionBt) {
-            if (current.getAvailable() > Double.parseDouble(sumItem.getText().toString())) {
-                if (current.getPersonalBalance() > Double.parseDouble(sumItem.getText().toString())) {
-                    Toast.makeText(this, "OK, you can spend them. Adding them to DB...", Toast.LENGTH_SHORT).show();
-                    if (!current.getIsMuted()) {
-                        tts.speak("OK, you can spend them. Adding them to database...", TextToSpeech.QUEUE_FLUSH, null);
-                    }
-                    spend(Double.parseDouble(sumItem.getText().toString()), nameItem.getText().toString());
-                } else {
-                    hideKeyboard(this);
-                    anim();
-                    spendText1.setText("Your out of money, \nbut you do have credit. Wanna proceed?");
-                    if (!current.getIsMuted()) {
-                        tts.speak("Your out of money, but you do have credit. Wanna proceed?", TextToSpeech.QUEUE_FLUSH, null);
-                    }
-                    imgView.setImageResource(R.drawable.confused);
-                    spendText2.setVisibility(View.GONE);
-                    spendActionBt.setVisibility(View.GONE);
-                    sumItem.setVisibility(View.GONE);
-                    nameItem.setVisibility(View.GONE);
-                    confirm.setVisibility(View.VISIBLE);
-                }
+            if (TextUtils.isEmpty(sumItem.getText()) || TextUtils.isEmpty(nameItem.getText())) {
+                Toast.makeText(this, getString(R.string.check_fields), Toast.LENGTH_SHORT).show();
             } else {
-                anim();
-                Toast.makeText(this, "Sorry, you don't have enough money to spend. You have bills to pay.", Toast.LENGTH_SHORT).show();
-                if (!current.getIsMuted()) {
-                    tts.speak("Sorry, you don't have enough money to spend. You have bills to pay.", TextToSpeech.QUEUE_FLUSH, null);
+                if (current.getAvailable() > Double.parseDouble(sumItem.getText().toString())) {
+                    if (current.getPersonalBalance() > Double.parseDouble(sumItem.getText().toString())) {
+                        Toast.makeText(this, getString(R.string.adding_to_db_toast), Toast.LENGTH_SHORT).show();
+                        if (!current.getIsMuted()) {
+                            tts.speak(getString(R.string.adding_to_db_tts), TextToSpeech.QUEUE_FLUSH, null);
+                        }
+                        spend(Double.parseDouble(sumItem.getText().toString()), nameItem.getText().toString());
+                    } else {
+                        hideKeyboard(this);
+                        anim();
+                        spendText1.setText(R.string.out_of_money_tv);
+                        if (!current.getIsMuted()) {
+                            tts.speak(getString(R.string.out_of_money_tts), TextToSpeech.QUEUE_FLUSH, null);
+                        }
+                        imgView.setImageResource(R.drawable.confused);
+                        spendText2.setVisibility(View.GONE);
+                        spendActionBt.setVisibility(View.GONE);
+                        sumItem.setVisibility(View.GONE);
+                        nameItem.setVisibility(View.GONE);
+                        confirm.setVisibility(View.VISIBLE);
+                    }
+                } else {
+                    anim();
+                    Toast.makeText(this, getString(R.string.not_enough_money), Toast.LENGTH_SHORT).show();
+                    if (!current.getIsMuted()) {
+                        tts.speak(getString(R.string.not_enough_money), TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                    imgView.setImageResource(R.drawable.angry);
                 }
-                imgView.setImageResource(R.drawable.angry);
             }
         }
     }

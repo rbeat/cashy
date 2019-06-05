@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,7 +22,6 @@ public class Setup extends AppCompatActivity implements View.OnClickListener {
     EditText name, balance, credit;
     String email;
     private DatabaseReference mDatabase;
-    TextToSpeech tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +36,7 @@ public class Setup extends AppCompatActivity implements View.OnClickListener {
         credit = findViewById(R.id.credit);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         ok_name.setOnClickListener(this);
-        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    tts.setLanguage(new Locale("en_US"));
-                }
-            }
-        });
-        tts.speak("Hey! Welcome to Cashy! Tell me, what's your name, and your current balance, so we could proceed.", TextToSpeech.QUEUE_FLUSH, null);
+
 
     }
 
@@ -60,7 +53,11 @@ public class Setup extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == ok_name) {
-            createUser(name.getText().toString(), Double.parseDouble(balance.getText().toString()), Double.parseDouble(credit.getText().toString()));
+            if (TextUtils.isEmpty(name.getText()) || TextUtils.isEmpty(balance.getText()) || TextUtils.isEmpty(credit.getText())) {
+                Toast.makeText(this, getString(R.string.check_fields), Toast.LENGTH_SHORT).show();
+            } else {
+                createUser(name.getText().toString(), Double.parseDouble(balance.getText().toString()), Double.parseDouble(credit.getText().toString()));
+            }
         }
     }
 

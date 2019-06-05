@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Hi! Welcome to Cashy!"
+            android:text="@string/setup_tv1"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Tell me, what is your name?"
+            android:text="@string/setup_tv2"
             android:textSize="27dp"
             app:layout_constraintBottom_toBottomOf="parent"
 
@@ -70,13 +70,13 @@
             android:id="@+id/name"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="John Appleseed" />
+            android:hint="@string/name_example" />
 
         <TextView
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Let's talk money. How much you have as for right now?"
+            android:text="@string/setup_tv2"
             android:textSize="27dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -88,20 +88,20 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
-            android:hint="Your balance. Example: 95.75" />
+            android:hint="@string/setup_et1" />
 
         <EditText
             android:id="@+id/credit"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
-            android:hint="Your credit balance" />
+            android:hint="@string/setup_et2" />
 
         <Button
             android:id="@+id/ok_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OK" />
+            android:text="@string/ok" />
 
 
     </LinearLayout>

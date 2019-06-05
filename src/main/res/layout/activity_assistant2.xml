@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Hi! Welcome to Cashy!\nGetting information..."
+            android:text="@string/welcome_loading"
             android:textSize="35dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -59,74 +59,74 @@
 
         <Button
             android:id="@+id/balanceBt"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Current Balance " />
+            android:text="@string/current_balance" />
 
         <Button
             android:id="@+id/add"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Add Money " />
+            android:text="@string/add_money" />
 
         <Button
             android:id="@+id/spendBt"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Spend money " />
+            android:text="@string/spend_money" />
 
         <Button
             android:id="@+id/billsBt"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Add bills to pay " />
+            android:text="@string/add_bills" />
 
         <Button
             android:id="@+id/showBillsBt"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Show my bills " />
+            android:text="@string/show_bills" />
 
         <Button
             android:id="@+id/showSpendsBt"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Show my spends " />
+            android:text="@string/show_spends" />
 
         <Button
             android:id="@+id/mute"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
             android:visibility="gone"
-            android:text=" Mute Assistant " />
+            android:text="@string/mute_tts" />
 
         <Button
             android:id="@+id/logout"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:background="@drawable/round_button"
-            android:text=" Logout " />
+            android:text="@string/logout" />
 
 
     </LinearLayout>
